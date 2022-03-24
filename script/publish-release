@@ -13,19 +13,19 @@ USAGE: publish-release <VERSION>
 
 Where <VERSION> is the version to release. It must be in the form:
 
-    api/vA.B.C
+    vA.B.C
 MESSAGE
 exit 1
 fi
 
-if [[ $VERSION != api/v* ]]; then
-  echo Invalid version specified. Expected the folowing format: api/vA.B.C
+if [[ $VERSION != v* ]]; then
+  echo Invalid version specified. Expected the folowing format: vA.B.C
   echo
   exit 1
 fi
 
 PACKAGE_VERSION=$(npm -s run env echo '$npm_package_version')
-if [[ $VERSION != api/v$PACKAGE_VERSION ]]; then
+if [[ $VERSION != v$PACKAGE_VERSION ]]; then
   echo Invalid version specified. Does not match package.json
   echo
   exit 1

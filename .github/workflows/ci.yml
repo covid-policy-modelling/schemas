@@ -2,14 +2,11 @@ name: API Package-Publish to npm for Tags/Releases
 on:
   push:
     tags:
-      - 'api/v*'
+      - 'v*'
 jobs:
   npm-publish:
     name: npm-publish
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: packages/api
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2

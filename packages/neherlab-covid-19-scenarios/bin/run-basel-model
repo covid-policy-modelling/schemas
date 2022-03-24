@@ -1,5 +1,0 @@
-#!/bin/bash
-
-pushd $MODEL_REPO_ROOT
-yarn cli "$@"
-popd
