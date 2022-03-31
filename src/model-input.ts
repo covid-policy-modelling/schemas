@@ -2,7 +2,13 @@
  * A generalized description of the input to an epidemiological model.
  */
 export interface ModelInput {
+  /**
+   * @examples ["US"]
+   */
   region: string
+  /**
+   * @examples ["US-AK"]
+   */
   subregion?: string
   parameters: ModelParameters
 }

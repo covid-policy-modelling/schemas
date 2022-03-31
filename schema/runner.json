@@ -72,9 +72,15 @@
           "$ref": "#/definitions/ModelParameters"
         },
         "region": {
+          "examples": [
+            "US"
+          ],
           "type": "string"
         },
         "subregion": {
+          "examples": [
+            "US-AK"
+          ],
           "type": "string"
         }
       },
