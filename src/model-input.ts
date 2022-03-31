@@ -70,6 +70,9 @@ export interface InterventionPeriod {
   reductionPopulationContact: number
 }
 
+/**
+ * @format date
+ */
 export type ISODate = string
 
 export enum Intensity {
