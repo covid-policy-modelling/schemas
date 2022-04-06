@@ -72,16 +72,10 @@
           "$ref": "#/definitions/ModelParameters"
         },
         "region": {
-          "examples": [
-            "US"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/Region"
         },
         "subregion": {
-          "examples": [
-            "US-AK"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/Subregion"
         }
       },
       "required": [
@@ -129,6 +123,12 @@
       ],
       "type": "object"
     },
+    "Region": {
+      "examples": [
+        "US"
+      ],
+      "type": "string"
+    },
     "RequestInput": {
       "additionalProperties": false,
       "properties": {
@@ -161,6 +161,12 @@
         "callbackURL"
       ],
       "type": "object"
+    },
+    "Subregion": {
+      "examples": [
+        "US-AK"
+      ],
+      "type": "string"
     }
   }
 }

@@ -2,14 +2,8 @@
  * A generalized description of the input to an epidemiological model.
  */
 export interface ModelInput {
-  /**
-   * @examples ["US"]
-   */
-  region: string
-  /**
-   * @examples ["US-AK"]
-   */
-  subregion?: string
+  region: Region
+  subregion?: Subregion
   parameters: ModelParameters
 }
 
@@ -80,6 +74,16 @@ export interface InterventionPeriod {
  * @format date
  */
 export type ISODate = string
+
+/**
+ * @examples ["US"]
+ */
+export type Region = string
+
+/**
+ * @examples ["US-AK"]
+ */
+export type Subregion = string
 
 export enum Intensity {
   Mild = 'mild',
