@@ -86,7 +86,7 @@ export type Region = string
 export type Subregion = string
 
 export enum Intensity {
-  Mild = 'mild',
-  Moderate = 'moderate',
   Aggressive = 'aggressive',
+  Moderate = 'moderate',
+  Mild = 'mild',
 }

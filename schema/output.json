@@ -8,9 +8,9 @@
     },
     "Intensity": {
       "enum": [
-        "mild",
+        "aggressive",
         "moderate",
-        "aggressive"
+        "mild"
       ],
       "type": "string"
     },
