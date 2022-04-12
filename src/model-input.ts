@@ -1,11 +1,20 @@
 /**
  * A generalized description of the input to an epidemiological model.
  */
-export interface ModelInput {
+export interface CommonModelInput {
   region: Region
   subregion?: Subregion
   parameters: ModelParameters
 }
+
+export interface MinimalModelInput {
+  p: number[]
+  u0: number[]
+  tspan: number[]
+  dt?: number
+}
+
+export type ModelInput = CommonModelInput | MinimalModelInput
 
 export interface ModelParameters {
   /**

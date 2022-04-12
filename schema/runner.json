@@ -2,6 +2,26 @@
   "$ref": "#/definitions/RequestInput",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "CommonModelInput": {
+      "additionalProperties": false,
+      "description": "A generalized description of the input to an epidemiological model.",
+      "properties": {
+        "parameters": {
+          "$ref": "#/definitions/ModelParameters"
+        },
+        "region": {
+          "$ref": "#/definitions/Region"
+        },
+        "subregion": {
+          "$ref": "#/definitions/Subregion"
+        }
+      },
+      "required": [
+        "region",
+        "parameters"
+      ],
+      "type": "object"
+    },
     "ISODate": {
       "examples": [
         "2020-03-06"
@@ -51,6 +71,38 @@
       ],
       "type": "object"
     },
+    "MinimalModelInput": {
+      "additionalProperties": false,
+      "properties": {
+        "dt": {
+          "type": "number"
+        },
+        "p": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "tspan": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "u0": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "p",
+        "u0",
+        "tspan"
+      ],
+      "type": "object"
+    },
     "Model": {
       "additionalProperties": false,
       "properties": {
@@ -68,24 +120,14 @@
       "type": "object"
     },
     "ModelInput": {
-      "additionalProperties": false,
-      "description": "A generalized description of the input to an epidemiological model.",
-      "properties": {
-        "parameters": {
-          "$ref": "#/definitions/ModelParameters"
+      "anyOf": [
+        {
+          "$ref": "#/definitions/CommonModelInput"
         },
-        "region": {
-          "$ref": "#/definitions/Region"
-        },
-        "subregion": {
-          "$ref": "#/definitions/Subregion"
+        {
+          "$ref": "#/definitions/MinimalModelInput"
         }
-      },
-      "required": [
-        "region",
-        "parameters"
-      ],
-      "type": "object"
+      ]
     },
     "ModelParameters": {
       "additionalProperties": false,

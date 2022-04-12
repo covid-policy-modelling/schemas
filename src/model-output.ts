@@ -16,7 +16,7 @@ export interface ModelDescription {
   connectorVersion: string
 }
 
-export interface ModelOutput {
+export interface CommonModelOutput {
   metadata: ModelInput
   model: ModelDescription
   time: {
@@ -42,6 +42,16 @@ export interface ModelOutput {
     metrics: SeverityMetrics
   }
 }
+
+export interface MinimalModelOutput {
+  metadata: ModelInput
+  model: ModelDescription
+  t: number[]
+  u: number[][]
+  outputs?: number[]
+}
+
+export type ModelOutput = CommonModelOutput | MinimalModelOutput
 
 export interface SeverityMetrics {
   /**

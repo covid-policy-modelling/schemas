@@ -2,6 +2,26 @@
   "$ref": "#/definitions/ModelInput",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "CommonModelInput": {
+      "additionalProperties": false,
+      "description": "A generalized description of the input to an epidemiological model.",
+      "properties": {
+        "parameters": {
+          "$ref": "#/definitions/ModelParameters"
+        },
+        "region": {
+          "$ref": "#/definitions/Region"
+        },
+        "subregion": {
+          "$ref": "#/definitions/Subregion"
+        }
+      },
+      "required": [
+        "region",
+        "parameters"
+      ],
+      "type": "object"
+    },
     "ISODate": {
       "examples": [
         "2020-03-06"
@@ -51,25 +71,47 @@
       ],
       "type": "object"
     },
-    "ModelInput": {
+    "MinimalModelInput": {
       "additionalProperties": false,
-      "description": "A generalized description of the input to an epidemiological model.",
       "properties": {
-        "parameters": {
-          "$ref": "#/definitions/ModelParameters"
+        "dt": {
+          "type": "number"
         },
-        "region": {
-          "$ref": "#/definitions/Region"
+        "p": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
         },
-        "subregion": {
-          "$ref": "#/definitions/Subregion"
+        "tspan": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "u0": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
         }
       },
       "required": [
-        "region",
-        "parameters"
+        "p",
+        "u0",
+        "tspan"
       ],
       "type": "object"
+    },
+    "ModelInput": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/CommonModelInput"
+        },
+        {
+          "$ref": "#/definitions/MinimalModelInput"
+        }
+      ]
     },
     "ModelParameters": {
       "additionalProperties": false,
