@@ -1,6 +1,6 @@
 {
   "name": "@covid-policy-modelling/api",
-  "version": "0.14.6",
+  "version": "0.14.7",
   "main": "dist/src/index",
   "types": "dist/src/index.d.ts",
   "scripts": {
