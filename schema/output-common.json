@@ -38,7 +38,7 @@
           "type": "object"
         },
         "metadata": {
-          "$ref": "#/definitions/ModelInput"
+          "$ref": "#/definitions/CommonModelInput"
         },
         "model": {
           "$ref": "#/definitions/ModelDescription"
@@ -137,38 +137,6 @@
       ],
       "type": "object"
     },
-    "MinimalModelInput": {
-      "additionalProperties": false,
-      "properties": {
-        "dt": {
-          "type": "number"
-        },
-        "p": {
-          "items": {
-            "type": "number"
-          },
-          "type": "array"
-        },
-        "tspan": {
-          "items": {
-            "type": "number"
-          },
-          "type": "array"
-        },
-        "u0": {
-          "items": {
-            "type": "number"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "p",
-        "u0",
-        "tspan"
-      ],
-      "type": "object"
-    },
     "ModelDescription": {
       "additionalProperties": false,
       "properties": {
@@ -191,16 +159,6 @@
         "connectorVersion"
       ],
       "type": "object"
-    },
-    "ModelInput": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/CommonModelInput"
-        },
-        {
-          "$ref": "#/definitions/MinimalModelInput"
-        }
-      ]
     },
     "ModelParameters": {
       "additionalProperties": false,

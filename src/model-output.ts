@@ -1,4 +1,4 @@
-import { ModelInput } from './model-input'
+import { CommonModelInput, MinimalModelInput } from './model-input'
 
 export interface ModelDescription {
   /**
@@ -17,7 +17,7 @@ export interface ModelDescription {
 }
 
 export interface CommonModelOutput {
-  metadata: ModelInput
+  metadata: CommonModelInput
   model: ModelDescription
   time: {
     /**
@@ -44,7 +44,7 @@ export interface CommonModelOutput {
 }
 
 export interface MinimalModelOutput {
-  metadata: ModelInput
+  metadata: MinimalModelInput
   model: ModelDescription
   t: number[]
   u: number[][]
