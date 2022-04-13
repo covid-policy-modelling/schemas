@@ -10,3 +10,15 @@ ts-json-schema-generator --path src/index.ts --type ModelInput --out schema/inpu
 
 echo Generating output schema
 ts-json-schema-generator --path src/index.ts --type ModelOutput --out schema/output.json
+
+echo Generating common input schema
+ts-json-schema-generator --path src/index.ts --type CommonModelInput --out schema/input-common.json
+
+echo Generating common output schema
+ts-json-schema-generator --path src/index.ts --type CommonModelOutput --out schema/output-common.json
+
+echo Generating minimal input schema
+ts-json-schema-generator --path src/index.ts --type MinimalModelInput --out schema/input-minimal.json
+
+echo Generating minimal output schema
+ts-json-schema-generator --path src/index.ts --type MinimalModelOutput --out schema/output-minimal.json

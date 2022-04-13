@@ -1,0 +1,38 @@
+{
+  "$ref": "#/definitions/MinimalModelInput",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "MinimalModelInput": {
+      "additionalProperties": false,
+      "properties": {
+        "dt": {
+          "type": "number"
+        },
+        "p": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "tspan": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "u0": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "p",
+        "u0",
+        "tspan"
+      ],
+      "type": "object"
+    }
+  }
+}
