@@ -1,0 +1,70 @@
+{
+    
+    "time": {
+        
+        "t0": "2021-05-21",
+        
+        "timestamps": [1,2,3,4],
+        
+        "extent": [1,4]
+    },
+    
+    "model": {
+        
+        "name": "Demo Model",
+        
+        "modelVersion": "0.0.0",
+        
+        "connectorVersion": "0.0.0"
+    },
+    
+    "metadata": {
+        "region": "GB",
+        "subregion": "England",
+        "parameters": {
+            "calibrationCaseCount": 1400,
+            "calibrationDate": "2021-05-21",
+            "r0": null,
+            "calibrationDeathCount": 200,
+            "interventionPeriods": [
+                {
+                 "startDate": "2021-06-21",
+                  "schoolClosure": "mild",
+                  "caseIsolation": "aggressive",
+                  "voluntaryHomeQuarantine": "moderate",
+                  "reductionPopulationContact": 34
+                }
+             ]
+        }
+    },
+    
+    "aggregate": {
+        "metrics": {
+            
+            "Critical": [],
+            
+            "CritRecov": [],
+            
+            "cumCritical": [],
+            
+            "cumCritRecov": [],
+            
+            "cumILI": [],
+            
+            "cumMild": [],
+            
+            "SARI": [],
+            
+            "cumSARI": [],
+            
+            "ILI": [],
+            
+            "incDeath": [],
+            
+            "Mild": [],
+            
+            "R": []
+        }
+    }
+}
+

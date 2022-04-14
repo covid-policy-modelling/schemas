@@ -1,0 +1,43 @@
+// A generalized description of the input to an epidemiological model.
+{
+   // ISO-3166 country code for the region results correspond to, e.g. "GB", see https://www.iso.org/iso-3166-country-codes.html.
+   "region": "GB",
+   // Optional specification of a subregion. Usually an ISO-3166-2 subdivsion code, but may be a code from some other recognised source, e.g. ONS in the UK.
+   "subregion":"GB-ENG",
+   "parameters":{
+        // An ISO-8601 string encoding the date of the most recent case data in the region.
+        "calibrationDate": "2021-06-17",
+        // The total number of confirmed cases in the region before the calibration date.
+        "calibrationCaseCount": 1400,
+        // The total number of deaths in the region before the calibration date.
+        "calibrationDeathCount": 200,
+        // A list of time periods, each with a different set of interventions.
+        "interventionPeriods": [
+        {
+            // An ISO-8601 string encoding the date that these interventions begin.
+            "startDate": "2020-03-15",
+            // The estimated reduction in population contact resulting from all of the above interventions. Some models require this generalized parameter instead of the individual interventions.
+            "reductionPopulationContact": 15,
+            /* One or more of:
+             *    "caseIsolation" - The level to which individuals with symptoms
+             *                      self-isolate.
+             *    "schoolClosure" - The level of school closure in the region.
+             *    "socialDistancing" - The level of social distancing in the region.
+             *    "voluntaryHomeQuarantine" - The level to which entire households
+             *                                self-isolate when one member of the
+             *                                household has symptoms.
+             *     which can have a value of: "mild", "moderate", "aggressive"
+             */
+            "socialDistancing": "moderate"
+          },
+          {
+            "startDate": "2020-06-25",
+            "reductionPopulationContact": 35,
+            "caseIsolation": "aggressive"
+          }
+          // ...
+        ],
+        // The assumed reproduction number for the virus. If this is null, then each model will use its own default value.
+        "r0": null
+  }
+}

@@ -1,0 +1,35 @@
+
+{
+   
+   "region": "GB",
+   
+   "subregion":"GB-ENG",
+   "parameters":{
+        
+        "calibrationDate": "2021-06-17",
+        
+        "calibrationCaseCount": 1400,
+        
+        "calibrationDeathCount": 200,
+        
+        "interventionPeriods": [
+        {
+            
+            "startDate": "2020-03-15",
+            
+            "reductionPopulationContact": 15,
+            
+            "socialDistancing": "moderate"
+          },
+          {
+            "startDate": "2020-06-25",
+            "reductionPopulationContact": 35,
+            "caseIsolation": "aggressive"
+          }
+          
+        ],
+        
+        "r0": null
+  }
+}
+

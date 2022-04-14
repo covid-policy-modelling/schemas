@@ -14,10 +14,14 @@ ts-json-schema-generator --path src/index.ts --type ModelOutput --out schema/out
 echo Generating common input schema
 ts-json-schema-generator --path src/index.ts --type CommonModelInput --out schema/input-common.json
 wetzel schema/input-common.json -w > docs/input-common.md
+strip-json-comments --no-whitespace docs/input-common-annotated.json > docs/input-common-example.json
+ajv validate -s schema/input-common.json -d docs/input-common-example.json
 
 echo Generating common output schema
 ts-json-schema-generator --path src/index.ts --type CommonModelOutput --out schema/output-common.json
 wetzel schema/output-common.json -w > docs/output-common.md
+strip-json-comments --no-whitespace docs/output-common-annotated.json > docs/output-common-example.json
+ajv validate -s schema/output-common.json -d docs/output-common-example.json
 
 echo Generating minimal input schema
 ts-json-schema-generator --path src/index.ts --type MinimalModelInput --out schema/input-minimal.json

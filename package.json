@@ -16,7 +16,9 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "ajv-cli": "^5.0.0",
     "gts": "^1.1.2",
+    "strip-json-comments-cli": "^2.0.1",
     "ts-json-schema-generator": "^0.65.0",
     "wetzel": "^0.2.3"
   },
