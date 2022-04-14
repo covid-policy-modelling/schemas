@@ -154,7 +154,6 @@ parameter instead of the individual interventions.
 
 * **Type**: `ISODate`
 * **Required**:  &#10003; Yes
-* **Format**: date
 * **Examples**:
     * `2020-03-06`
 
@@ -244,7 +243,6 @@ The total number of confirmed cases in the region before the calibration date.
 
 * **Type**: `ISODate`
 * **Required**:  &#10003; Yes
-* **Format**: date
 * **Examples**:
     * `2020-03-06`
 

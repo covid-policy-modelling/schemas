@@ -27,7 +27,6 @@
       "examples": [
         "2020-03-06"
       ],
-      "format": "date",
       "title": "ISO Date",
       "type": "string"
     },

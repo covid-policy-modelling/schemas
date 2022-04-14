@@ -95,7 +95,6 @@ export interface InterventionPeriod {
 /**
  * @title ISO Date
  * @examples ["2020-03-06"]
- * @format date
  */
 export type ISODate = string
 
