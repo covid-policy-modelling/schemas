@@ -1,19 +1,16 @@
 > WETZEL_WARNING: Unrecognized JSON Schema.
 
 # Objects
-* [`Common Model Output`](#reference-commonmodeloutput)
-    * [`Common Model Input`](#reference-commonmodelinput)
-        * [`Model Parameters`](#reference-modelparameters)
-            * [`Intervention Period`](#reference-interventionperiod)
-        * [`Region`](#reference-region)
-        * [`Subregion`](#reference-subregion)
-    * [`Severity Metrics`](#reference-severitymetrics)
+* [`Common Model Input`](#reference-commonmodelinput)
+    * [`Model Parameters`](#reference-modelparameters)
+        * [`Intervention Period`](#reference-interventionperiod)
+    * [`Region`](#reference-region)
+    * [`Subregion`](#reference-subregion)
+* [`Common Model Output`](#reference-commonmodeloutput) (root object)
 * [`Intensity`](#reference-intensity)
 * [`ISO Date`](#reference-isodate)
-* [`Minimal Model Output`](#reference-minimalmodeloutput)
-    * [`Minimal Model Input`](#reference-minimalmodelinput)
 * [`Model Description`](#reference-modeldescription)
-* [`Model Output`](#reference-modeloutput) (root object)
+* [`Severity Metrics`](#reference-severitymetrics)
 
 
 ---------------------------------------
@@ -182,88 +179,6 @@ parameter instead of the individual interventions.
 
 
 ---------------------------------------
-<a name="reference-minimalmodelinput"></a>
-## Minimal Model Input
-
-**`Minimal Model Input` Properties**
-
-|   |Type|Description|Required|
-|---|---|---|---|
-|**dt**|`number`||No|
-|**p**|`number` `[]`|| &#10003; Yes|
-|**tspan**|`number` `[]`|| &#10003; Yes|
-|**u0**|`number` `[]`|| &#10003; Yes|
-
-Additional properties are not allowed.
-
-### MinimalModelInput.dt
-
-* **Type**: `number`
-* **Required**: No
-
-### MinimalModelInput.p
-
-* **Type**: `number` `[]`
-* **Required**:  &#10003; Yes
-
-### MinimalModelInput.tspan
-
-* **Type**: `number` `[]`
-* **Required**:  &#10003; Yes
-
-### MinimalModelInput.u0
-
-* **Type**: `number` `[]`
-* **Required**:  &#10003; Yes
-
-
-
-
----------------------------------------
-<a name="reference-minimalmodeloutput"></a>
-## Minimal Model Output
-
-**`Minimal Model Output` Properties**
-
-|   |Type|Description|Required|
-|---|---|---|---|
-|**metadata**|`MinimalModelInput`|| &#10003; Yes|
-|**model**|`ModelDescription`|| &#10003; Yes|
-|**outputs**|`number` `[]`||No|
-|**t**|`number` `[]`|| &#10003; Yes|
-|**u**|`array` `[]`|| &#10003; Yes|
-
-Additional properties are not allowed.
-
-### MinimalModelOutput.metadata
-
-* **Type**: `MinimalModelInput`
-* **Required**:  &#10003; Yes
-
-### MinimalModelOutput.model
-
-* **Type**: `ModelDescription`
-* **Required**:  &#10003; Yes
-
-### MinimalModelOutput.outputs
-
-* **Type**: `number` `[]`
-* **Required**: No
-
-### MinimalModelOutput.t
-
-* **Type**: `number` `[]`
-* **Required**:  &#10003; Yes
-
-### MinimalModelOutput.u
-
-* **Type**: `array` `[]`
-* **Required**:  &#10003; Yes
-
-
-
-
----------------------------------------
 <a name="reference-modeldescription"></a>
 ## Model Description
 
@@ -300,12 +215,6 @@ A short display name to identify the model
 * **Type**: `string`
 * **Required**:  &#10003; Yes
 
-
-
-
----------------------------------------
-<a name="reference-modeloutput"></a>
-## Model Output
 
 
 

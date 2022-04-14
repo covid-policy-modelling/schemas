@@ -1,8 +1,13 @@
 > WETZEL_WARNING: Unrecognized JSON Schema.
 
 # Objects
+* [`Common Model Input`](#reference-commonmodelinput) (root object)
 * [`Intensity`](#reference-intensity)
 * [`ISO Date`](#reference-isodate)
+* [`Model Parameters`](#reference-modelparameters)
+    * [`Intervention Period`](#reference-interventionperiod)
+* [`Region`](#reference-region)
+* [`Subregion`](#reference-subregion)
 
 
 ---------------------------------------
@@ -131,76 +136,6 @@ parameter instead of the individual interventions.
 
 
 ---------------------------------------
-<a name="reference-minimalmodelinput"></a>
-## Minimal Model Input
-
-**`Minimal Model Input` Properties**
-
-|   |Type|Description|Required|
-|---|---|---|---|
-|**dt**|`number`||No|
-|**p**|`number` `[]`|| &#10003; Yes|
-|**tspan**|`number` `[]`|| &#10003; Yes|
-|**u0**|`number` `[]`|| &#10003; Yes|
-
-Additional properties are not allowed.
-
-### MinimalModelInput.dt
-
-* **Type**: `number`
-* **Required**: No
-
-### MinimalModelInput.p
-
-* **Type**: `number` `[]`
-* **Required**:  &#10003; Yes
-
-### MinimalModelInput.tspan
-
-* **Type**: `number` `[]`
-* **Required**:  &#10003; Yes
-
-### MinimalModelInput.u0
-
-* **Type**: `number` `[]`
-* **Required**:  &#10003; Yes
-
-
-
-
----------------------------------------
-<a name="reference-model"></a>
-## Model
-
-**`Model` Properties**
-
-|   |Type|Description|Required|
-|---|---|---|---|
-|**imageURL**|`string`|| &#10003; Yes|
-|**slug**|`string`|| &#10003; Yes|
-
-Additional properties are not allowed.
-
-### Model.imageURL
-
-* **Type**: `string`
-* **Required**:  &#10003; Yes
-
-### Model.slug
-
-* **Type**: `string`
-* **Required**:  &#10003; Yes
-
-
-
-
----------------------------------------
-<a name="reference-modelinput"></a>
-## Model Input
-
-
-
----------------------------------------
 <a name="reference-modelparameters"></a>
 ## Model Parameters
 
@@ -260,16 +195,6 @@ model will use its own default value.
 ---------------------------------------
 <a name="reference-region"></a>
 ## Region
-
-
-
-
-
-
-
----------------------------------------
-<a name="reference-runstatus"></a>
-## Run Status
 
 
 
