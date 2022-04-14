@@ -1,5 +1,3 @@
-> WETZEL_WARNING: Unrecognized JSON Schema.
-
 # Objects
 * [`Minimal Model Input`](#reference-minimalmodelinput) (root object)
 
@@ -43,6 +41,6 @@ Additional properties are not allowed.
 
 
 ---------------------------------------
-<a name="reference-wetzel_warning:-title-not-defined"></a>
-## WETZEL_WARNING: title not defined
+<a name="reference-"></a>
+## 
 

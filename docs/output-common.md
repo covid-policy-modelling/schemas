@@ -1,5 +1,3 @@
-> WETZEL_WARNING: Unrecognized JSON Schema.
-
 # Objects
 * [`Common Model Input`](#reference-commonmodelinput)
     * [`Model Parameters`](#reference-modelparameters)
@@ -398,6 +396,6 @@ Number of deaths occurring on this day
 
 
 ---------------------------------------
-<a name="reference-wetzel_warning:-title-not-defined"></a>
-## WETZEL_WARNING: title not defined
+<a name="reference-"></a>
+## 
 

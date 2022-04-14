@@ -1,5 +1,3 @@
-> WETZEL_WARNING: Unrecognized JSON Schema.
-
 # Objects
 * [`Common Model Input`](#reference-commonmodelinput) (root object)
 * [`Intensity`](#reference-intensity)
@@ -205,6 +203,6 @@ model will use its own default value.
 
 
 ---------------------------------------
-<a name="reference-wetzel_warning:-title-not-defined"></a>
-## WETZEL_WARNING: title not defined
+<a name="reference-"></a>
+## 
 
