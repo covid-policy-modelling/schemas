@@ -66,6 +66,12 @@ export interface MinimalModelOutput {
 export type ModelOutput = CommonModelOutput | MinimalModelOutput
 
 /**
+ * Each output below is an array corresponding to the `extent` specified above (i.e. with the same length as `timestamps`).
+ * Other than for `R` all numbers must be integers.
+ * Not all output parameters may be appropriate for your model.
+ * All keys (except `R`) in the `aggregate` object are required however.
+ * If a particular metric is not supported an array of zeros can be given.
+ * For `R`, if your model does not produce this, you can simply omit the key.
  * @title Severity Metrics
  */
 export interface SeverityMetrics {

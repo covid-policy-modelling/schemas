@@ -7,13 +7,16 @@
       "description": "A generalized description of the input to an epidemiological model.",
       "properties": {
         "parameters": {
-          "$ref": "#/definitions/ModelParameters"
+          "$ref": "#/definitions/ModelParameters",
+          "description": "Desired parameters.\nConnectors may choose to ignore any of these parameters if they wish."
         },
         "region": {
-          "$ref": "#/definitions/Region"
+          "$ref": "#/definitions/Region",
+          "description": "The desired geographical top-level region for the simulation.\nConnector must check this value (and subregion, if provided) and and either produce results for that geography, or return an error."
         },
         "subregion": {
-          "$ref": "#/definitions/Subregion"
+          "$ref": "#/definitions/Subregion",
+          "description": "Specific subregion for the simulation.\nMay be omitted"
         }
       },
       "required": [

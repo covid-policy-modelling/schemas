@@ -281,6 +281,13 @@ model will use its own default value.
 <a name="reference-severitymetrics"></a>
 ## Severity Metrics
 
+Each output below is an array corresponding to the `extent` specified above (i.e. with the same length as `timestamps`).
+Other than for `R` all numbers must be integers.
+Not all output parameters may be appropriate for your model.
+All keys (except `R`) in the `aggregate` object are required however.
+If a particular metric is not supported an array of zeros can be given.
+For `R`, if your model does not produce this, you can simply omit the key.
+
 **`Severity Metrics` Properties**
 
 |   |Type|Description|Required|

@@ -3,8 +3,20 @@
  * @title Common Model Input
  */
 export interface CommonModelInput {
+  /**
+   * The desired geographical top-level region for the simulation.
+   * Connector must check this value (and subregion, if provided) and and either produce results for that geography, or return an error.
+   */
   region: Region
+  /**
+   * Specific subregion for the simulation.
+   * May be omitted
+   */
   subregion?: Subregion
+  /**
+   * Desired parameters.
+   * Connectors may choose to ignore any of these parameters if they wish.
+   */
   parameters: ModelParameters
 }
 

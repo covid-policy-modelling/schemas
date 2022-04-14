@@ -1,4 +1,8 @@
-// A generalized description of the input to an epidemiological model.
+/* Annotated example of an input file corresponding to schema/input-common.json
+ * Note that JSON does not allow comments, so this file is not a valid JSON file
+ * See docs/input-common-example.json for a valid, uncommented file
+ * The ordering of keys within an object may vary.
+ */
 {
    // ISO-3166 country code for the region results correspond to, e.g. "GB", see https://www.iso.org/iso-3166-country-codes.html.
    "region": "GB",

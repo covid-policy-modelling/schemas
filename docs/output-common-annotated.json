@@ -1,5 +1,9 @@
+/* Annotated example of an input file corresponding to schema/input-common.json
+ * Note that JSON does not allow comments, so this file is not a valid JSON file
+ * See docs/input-common-example.json for a valid, uncommented file
+ * The order of keys in the objects may vary.
+ */
 {
-    // A generalized description of the outputs of an epidemiological model.
     "time": {
         // An ISO-8601, e.g. "2021-05-27, string encoding the date that each timeseries begins.
         "t0": "2021-05-21",
@@ -37,7 +41,6 @@
              ]
         }
     },
-    // Each output below is an array corresponding to the `extent` specified above.  If a particular metric is not supported an array of zeros can be given.  Other than for the R values all numbers given SHOULD be integers.
     "aggregate": {
         "metrics": {
             // Current number of critical cases on this day (assume represents ICU demand).
