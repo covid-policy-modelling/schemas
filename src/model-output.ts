@@ -1,5 +1,8 @@
 import { CommonModelInput, MinimalModelInput } from './model-input'
 
+/**
+ * @title Model Description
+ */
 export interface ModelDescription {
   /**
    * A short display name to identify the model
@@ -16,6 +19,9 @@ export interface ModelDescription {
   connectorVersion: string
 }
 
+/**
+ * @title Common Model Output
+ */
 export interface CommonModelOutput {
   metadata: CommonModelInput
   model: ModelDescription
@@ -43,6 +49,9 @@ export interface CommonModelOutput {
   }
 }
 
+/**
+ * @title Minimal Model Output
+ */
 export interface MinimalModelOutput {
   metadata: MinimalModelInput
   model: ModelDescription
@@ -51,8 +60,14 @@ export interface MinimalModelOutput {
   outputs?: number[]
 }
 
+/**
+ * @title Model Output
+ */
 export type ModelOutput = CommonModelOutput | MinimalModelOutput
 
+/**
+ * @title Severity Metrics
+ */
 export interface SeverityMetrics {
   /**
    * Current number of mild cases on this day

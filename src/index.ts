@@ -3,6 +3,9 @@ import * as output from './model-output'
 
 export { input, output }
 
+/**
+ * @title Request Input
+ */
 export interface RequestInput {
   id: string | number
   models: Model[]
@@ -10,6 +13,9 @@ export interface RequestInput {
   callbackURL: string | null
 }
 
+/**
+ * @title Run Status
+ */
 export enum RunStatus {
   Pending = 'pending',
   InProgress = 'in-progress',
@@ -18,6 +24,9 @@ export enum RunStatus {
   Failed = 'failed',
 }
 
+/**
+ * @title Run Output
+ */
 export interface RunOutput {
   modelSlug: string
   status: RunStatus
@@ -26,6 +35,9 @@ export interface RunOutput {
   workflowRunID?: string
 }
 
+/**
+ * @title Model
+ */
 export interface Model {
   slug: string
   imageURL: string

@@ -1,5 +1,4 @@
 {
-  "$ref": "#/definitions/CommonModelInput",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "CommonModelInput": {
@@ -75,6 +74,67 @@
       "title": "Intervention Period",
       "type": "object"
     },
+    "MinimalModelInput": {
+      "additionalProperties": false,
+      "properties": {
+        "dt": {
+          "type": "number"
+        },
+        "p": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "tspan": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "u0": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "p",
+        "u0",
+        "tspan"
+      ],
+      "title": "Minimal Model Input",
+      "type": "object"
+    },
+    "Model": {
+      "additionalProperties": false,
+      "properties": {
+        "imageURL": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slug",
+        "imageURL"
+      ],
+      "title": "Model",
+      "type": "object"
+    },
+    "ModelInput": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/CommonModelInput"
+        },
+        {
+          "$ref": "#/definitions/MinimalModelInput"
+        }
+      ],
+      "title": "Model Input"
+    },
     "ModelParameters": {
       "additionalProperties": false,
       "properties": {
@@ -120,6 +180,79 @@
         "US"
       ],
       "title": "Region",
+      "type": "string"
+    },
+    "RequestInput": {
+      "additionalProperties": false,
+      "properties": {
+        "callbackURL": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "configuration": {
+          "$ref": "#/definitions/ModelInput"
+        },
+        "id": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "models": {
+          "items": {
+            "$ref": "#/definitions/Model"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "models",
+        "configuration",
+        "callbackURL"
+      ],
+      "title": "Request Input",
+      "type": "object"
+    },
+    "RunOutput": {
+      "additionalProperties": false,
+      "properties": {
+        "exportLocation": {
+          "type": "string"
+        },
+        "modelSlug": {
+          "type": "string"
+        },
+        "resultsLocation": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/RunStatus"
+        },
+        "workflowRunID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "modelSlug",
+        "status",
+        "resultsLocation",
+        "exportLocation"
+      ],
+      "title": "Run Output",
+      "type": "object"
+    },
+    "RunStatus": {
+      "enum": [
+        "pending",
+        "in-progress",
+        "complete",
+        "unsupported",
+        "failed"
+      ],
+      "title": "Run Status",
       "type": "string"
     },
     "Subregion": {

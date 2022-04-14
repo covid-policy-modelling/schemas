@@ -20,6 +20,7 @@
         "region",
         "parameters"
       ],
+      "title": "Common Model Input",
       "type": "object"
     },
     "ISODate": {
@@ -27,6 +28,7 @@
         "2020-03-06"
       ],
       "format": "date",
+      "title": "ISO Date",
       "type": "string"
     },
     "Intensity": {
@@ -35,6 +37,7 @@
         "moderate",
         "mild"
       ],
+      "title": "Intensity",
       "type": "string"
     },
     "InterventionPeriod": {
@@ -69,6 +72,7 @@
         "startDate",
         "reductionPopulationContact"
       ],
+      "title": "Intervention Period",
       "type": "object"
     },
     "MinimalModelInput": {
@@ -101,6 +105,7 @@
         "u0",
         "tspan"
       ],
+      "title": "Minimal Model Input",
       "type": "object"
     },
     "Model": {
@@ -117,6 +122,7 @@
         "slug",
         "imageURL"
       ],
+      "title": "Model",
       "type": "object"
     },
     "ModelInput": {
@@ -127,7 +133,8 @@
         {
           "$ref": "#/definitions/MinimalModelInput"
         }
-      ]
+      ],
+      "title": "Model Input"
     },
     "ModelParameters": {
       "additionalProperties": false,
@@ -166,12 +173,14 @@
         "r0",
         "interventionPeriods"
       ],
+      "title": "Model Parameters",
       "type": "object"
     },
     "Region": {
       "examples": [
         "US"
       ],
+      "title": "Region",
       "type": "string"
     },
     "RequestInput": {
@@ -205,12 +214,14 @@
         "configuration",
         "callbackURL"
       ],
+      "title": "Request Input",
       "type": "object"
     },
     "Subregion": {
       "examples": [
         "US-AK"
       ],
+      "title": "Subregion",
       "type": "string"
     }
   }

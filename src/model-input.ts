@@ -1,5 +1,6 @@
 /**
  * A generalized description of the input to an epidemiological model.
+ * @title Common Model Input
  */
 export interface CommonModelInput {
   region: Region
@@ -7,6 +8,9 @@ export interface CommonModelInput {
   parameters: ModelParameters
 }
 
+/**
+ * @title Minimal Model Input
+ */
 export interface MinimalModelInput {
   p: number[]
   u0: number[]
@@ -14,8 +18,14 @@ export interface MinimalModelInput {
   dt?: number
 }
 
+/**
+ * @title Model Input
+ */
 export type ModelInput = CommonModelInput | MinimalModelInput
 
+/**
+ * @title Model Parameters
+ */
 export interface ModelParameters {
   /**
    * An ISO-8601 string encoding the date of the most recent case data in the region.
@@ -44,6 +54,9 @@ export interface ModelParameters {
   interventionPeriods: InterventionPeriod[]
 }
 
+/**
+ * @title Intervention Period
+ */
 export interface InterventionPeriod {
   /**
    * An ISO-8601 string encoding the date that these interventions begin.
@@ -80,21 +93,27 @@ export interface InterventionPeriod {
 }
 
 /**
+ * @title ISO Date
  * @examples ["2020-03-06"]
  * @format date
  */
 export type ISODate = string
 
 /**
+ * @title Region
  * @examples ["US"]
  */
 export type Region = string
 
 /**
+ * @title Subregion
  * @examples ["US-AK"]
  */
 export type Subregion = string
 
+/**
+ * @title Intensity
+ */
 export enum Intensity {
   Aggressive = 'aggressive',
   Moderate = 'moderate',

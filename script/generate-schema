@@ -22,3 +22,7 @@ ts-json-schema-generator --path src/index.ts --type MinimalModelInput --out sche
 
 echo Generating minimal output schema
 ts-json-schema-generator --path src/index.ts --type MinimalModelOutput --out schema/output-minimal.json
+
+echo Generating schema docs
+ts-json-schema-generator --path src/index.ts --out schema/schema.json
+wetzel schema/schema.json > docs/schema.md

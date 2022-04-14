@@ -32,6 +32,7 @@
         "u0",
         "tspan"
       ],
+      "title": "Minimal Model Input",
       "type": "object"
     },
     "MinimalModelOutput": {
@@ -71,6 +72,7 @@
         "t",
         "u"
       ],
+      "title": "Minimal Model Output",
       "type": "object"
     },
     "ModelDescription": {
@@ -94,6 +96,7 @@
         "modelVersion",
         "connectorVersion"
       ],
+      "title": "Model Description",
       "type": "object"
     }
   }

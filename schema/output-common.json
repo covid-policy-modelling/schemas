@@ -20,6 +20,7 @@
         "region",
         "parameters"
       ],
+      "title": "Common Model Input",
       "type": "object"
     },
     "CommonModelOutput": {
@@ -86,6 +87,7 @@
         "time",
         "aggregate"
       ],
+      "title": "Common Model Output",
       "type": "object"
     },
     "ISODate": {
@@ -93,6 +95,7 @@
         "2020-03-06"
       ],
       "format": "date",
+      "title": "ISO Date",
       "type": "string"
     },
     "Intensity": {
@@ -101,6 +104,7 @@
         "moderate",
         "mild"
       ],
+      "title": "Intensity",
       "type": "string"
     },
     "InterventionPeriod": {
@@ -135,6 +139,7 @@
         "startDate",
         "reductionPopulationContact"
       ],
+      "title": "Intervention Period",
       "type": "object"
     },
     "ModelDescription": {
@@ -158,6 +163,7 @@
         "modelVersion",
         "connectorVersion"
       ],
+      "title": "Model Description",
       "type": "object"
     },
     "ModelParameters": {
@@ -197,12 +203,14 @@
         "r0",
         "interventionPeriods"
       ],
+      "title": "Model Parameters",
       "type": "object"
     },
     "Region": {
       "examples": [
         "US"
       ],
+      "title": "Region",
       "type": "string"
     },
     "SeverityMetrics": {
@@ -306,12 +314,14 @@
         "cumCritical",
         "cumCritRecov"
       ],
+      "title": "Severity Metrics",
       "type": "object"
     },
     "Subregion": {
       "examples": [
         "US-AK"
       ],
+      "title": "Subregion",
       "type": "string"
     }
   }
