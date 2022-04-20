@@ -99,14 +99,18 @@ A generalized description of the input to an epidemiological model.
 <a name="reference-interventionperiod"></a>
 ## Intervention Period
 
+Each intervention period is specified by a `startDate`, a set of interventions (`socialDistancing`, `caseIsolation`, `voluntaryHomeQuarantine`, and `schoolClosure`), and an estimate of the overall effect of these interventions (`reductionPopulationContact`).
+This overall estimate is needed because some models do not simulate the effects of individual interventions.
+The strictness of each intervention is specified roughly, as one of `mild`, `moderate`, or `aggressive`.
+Each model connector is responsible for interpreting this distinction in a way that works for the particular model.
+
 **`Intervention Period` Properties**
 
 |   |Type|Description|Required|
 |---|---|---|---|
 |**caseIsolation**|`Intensity`||No|
-|**reductionPopulationContact**|`number`|The estimated reduction in population contact resulting from
-all of the above interventions. Some models require this generalized
-parameter instead of the individual interventions.| &#10003; Yes|
+|**reductionPopulationContact**|`number`|The estimated reduction in population contact resulting from all of the above interventions.
+Some models require this generalized parameter instead of the individual interventions.| &#10003; Yes|
 |**schoolClosure**|`Intensity`||No|
 |**socialDistancing**|`Intensity`||No|
 |**startDate**|`ISODate`|| &#10003; Yes|
@@ -125,9 +129,8 @@ Additional properties are not allowed.
 
 ### InterventionPeriod.reductionPopulationContact
 
-The estimated reduction in population contact resulting from
-all of the above interventions. Some models require this generalized
-parameter instead of the individual interventions.
+The estimated reduction in population contact resulting from all of the above interventions.
+Some models require this generalized parameter instead of the individual interventions.
 
 * **Type**: `number`
 * **Required**:  &#10003; Yes
@@ -226,9 +229,12 @@ A short display name to identify the model
 |**calibrationCaseCount**|`number`|The total number of confirmed cases in the region before the calibration date.| &#10003; Yes|
 |**calibrationDate**|`ISODate`|| &#10003; Yes|
 |**calibrationDeathCount**|`number`|The total number of deaths in the region before the calibration date.| &#10003; Yes|
-|**interventionPeriods**|`InterventionPeriod` `[]`|A list of time periods, each with a different set of interventions.| &#10003; Yes|
-|**r0**|`["number", "null"]`|The assumed reproduction number for the virus. If this is null, then each
-model will use its own default value.| &#10003; Yes|
+|**interventionPeriods**|`InterventionPeriod` `[]`|A list of time periods, each with a different set of interventions.
+Policy interventions are specified as a series of _intervention periods_, each with a certain set of interventions that are in place.
+For example, case isolation and social distancing may be instituted first, followed by school closure a week later, followed by a relaxation of all guidelines after several months.
+**Note** - In order to specify that _all_ interventions end on a certain date, there should be a _final_ intervention period that starts on that date, has no interventions specified, and has `reductionPopulationContact` set to zero.| &#10003; Yes|
+|**r0**|`["number", "null"]`|The assumed [_reproduction number_](https://en.wikipedia.org/wiki/Basic_reproduction_number) for the virus.
+If this is null, then each model will use its own default value.| &#10003; Yes|
 
 Additional properties are not allowed.
 
@@ -256,14 +262,17 @@ The total number of deaths in the region before the calibration date.
 ### ModelParameters.interventionPeriods
 
 A list of time periods, each with a different set of interventions.
+Policy interventions are specified as a series of _intervention periods_, each with a certain set of interventions that are in place.
+For example, case isolation and social distancing may be instituted first, followed by school closure a week later, followed by a relaxation of all guidelines after several months.
+**Note** - In order to specify that _all_ interventions end on a certain date, there should be a _final_ intervention period that starts on that date, has no interventions specified, and has `reductionPopulationContact` set to zero.
 
 * **Type**: `InterventionPeriod` `[]`
 * **Required**:  &#10003; Yes
 
 ### ModelParameters.r0
 
-The assumed reproduction number for the virus. If this is null, then each
-model will use its own default value.
+The assumed [_reproduction number_](https://en.wikipedia.org/wiki/Basic_reproduction_number) for the virus.
+If this is null, then each model will use its own default value.
 
 * **Type**: `["number", "null"]`
 * **Required**:  &#10003; Yes
@@ -281,7 +290,12 @@ model will use its own default value.
 <a name="reference-severitymetrics"></a>
 ## Severity Metrics
 
-Each output below is an array corresponding to the `extent` specified above (i.e. with the same length as `timestamps`).
+The output contains a number of time series which represent predicted metrics about the epidemic.
+Three kinds of metrics are reported:
+- **Current values** - These metrics (e.g. `Mild`, `Critical`) represent the current number of patients in a given condition, on a particular date. For example, the `Critical` value at a given timestamp represents the number of patients in critical condition on that day.
+- **Cumulative values** - These metrics (e.g. `cumMild`, `cumCritical`) represent the total number of people who have been afflicted with a given condition since the beginning of the epidemic. For example, the `cumCritical` value at a given timestamp represents the total number of people who had been in critical condition due to the virus any time leading up to that day.
+- **Incidence values** - The `incDeath` metric represents the number of patients who died of the virus on a given day.
+Each output is an array corresponding to the `extent` specified above (i.e. with the same length as `timestamps`).
 Other than for `R` all numbers must be integers.
 Not all output parameters may be appropriate for your model.
 All keys (except `R`) in the `aggregate` object are required however.

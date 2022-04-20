@@ -56,15 +56,15 @@ export interface MinimalModelOutput {
   metadata: MinimalModelInput
   model: ModelDescription
   /**
-   * a vector of times at which the model is run
+   * Vector of times at which the model is run
    */
   t: number[]
   /**
-   * a matrix of states
+   * Matrix of states
    */
   u: number[][]
   /**
-   * an optional vector of outputs
+   * Optional vector of outputs
    */
   outputs?: number[]
 }
@@ -75,7 +75,12 @@ export interface MinimalModelOutput {
 export type ModelOutput = CommonModelOutput | MinimalModelOutput
 
 /**
- * Each output below is an array corresponding to the `extent` specified above (i.e. with the same length as `timestamps`).
+ * The output contains a number of time series which represent predicted metrics about the epidemic.
+ * Three kinds of metrics are reported:
+ * - **Current values** - These metrics (e.g. `Mild`, `Critical`) represent the current number of patients in a given condition, on a particular date. For example, the `Critical` value at a given timestamp represents the number of patients in critical condition on that day.
+ * - **Cumulative values** - These metrics (e.g. `cumMild`, `cumCritical`) represent the total number of people who have been afflicted with a given condition since the beginning of the epidemic. For example, the `cumCritical` value at a given timestamp represents the total number of people who had been in critical condition due to the virus any time leading up to that day.
+ * - **Incidence values** - The `incDeath` metric represents the number of patients who died of the virus on a given day.
+ * Each output is an array corresponding to the `extent` specified above (i.e. with the same length as `timestamps`).
  * Other than for `R` all numbers must be integers.
  * Not all output parameters may be appropriate for your model.
  * All keys (except `R`) in the `aggregate` object are required however.

@@ -44,13 +44,14 @@
     },
     "InterventionPeriod": {
       "additionalProperties": false,
+      "description": "Each intervention period is specified by a `startDate`, a set of interventions (`socialDistancing`, `caseIsolation`, `voluntaryHomeQuarantine`, and `schoolClosure`), and an estimate of the overall effect of these interventions (`reductionPopulationContact`).\nThis overall estimate is needed because some models do not simulate the effects of individual interventions.\nThe strictness of each intervention is specified roughly, as one of `mild`, `moderate`, or `aggressive`.\nEach model connector is responsible for interpreting this distinction in a way that works for the particular model.",
       "properties": {
         "caseIsolation": {
           "$ref": "#/definitions/Intensity",
           "description": "The level to which individuals with symptoms self-isolate."
         },
         "reductionPopulationContact": {
-          "description": "The estimated reduction in population contact resulting from\nall of the above interventions. Some models require this generalized\nparameter instead of the individual interventions.",
+          "description": "The estimated reduction in population contact resulting from all of the above interventions.\nSome models require this generalized parameter instead of the individual interventions.",
           "type": "number"
         },
         "schoolClosure": {
@@ -67,7 +68,7 @@
         },
         "voluntaryHomeQuarantine": {
           "$ref": "#/definitions/Intensity",
-          "description": "The level to which entire households self-isolate when one member\nof the household has symptoms."
+          "description": "The level to which entire households self-isolate when one member of the household has symptoms."
         }
       },
       "required": [
@@ -86,21 +87,21 @@
         },
         "calibrationDate": {
           "$ref": "#/definitions/ISODate",
-          "description": "An ISO-8601 string encoding the date of the most recent case data in the region."
+          "description": "An ISO-8601 string encoding the date of the most recent case data in the region.\nSome models such as `CovidSim` require you to provide some information about recorded cases in the region, in order to calibrate the model.\nThe web-interface provides this information automatically, based on recorded case data downloaded daily from various international data sources."
         },
         "calibrationDeathCount": {
           "description": "The total number of deaths in the region before the calibration date.",
           "type": "number"
         },
         "interventionPeriods": {
-          "description": "A list of time periods, each with a different set of interventions.",
+          "description": "A list of time periods, each with a different set of interventions.\nPolicy interventions are specified as a series of _intervention periods_, each with a certain set of interventions that are in place.\nFor example, case isolation and social distancing may be instituted first, followed by school closure a week later, followed by a relaxation of all guidelines after several months.\n**Note** - In order to specify that _all_ interventions end on a certain date, there should be a _final_ intervention period that starts on that date, has no interventions specified, and has `reductionPopulationContact` set to zero.",
           "items": {
             "$ref": "#/definitions/InterventionPeriod"
           },
           "type": "array"
         },
         "r0": {
-          "description": "The assumed reproduction number for the virus. If this is null, then each\nmodel will use its own default value.",
+          "description": "The assumed [_reproduction number_](https://en.wikipedia.org/wiki/Basic_reproduction_number) for the virus.\nIf this is null, then each model will use its own default value.",
           "type": [
             "number",
             "null"

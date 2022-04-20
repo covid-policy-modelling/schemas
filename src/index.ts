@@ -7,9 +7,16 @@ export { input, output }
  * @title Request Input
  */
 export interface RequestInput {
+  /**
+   * used to allow callbacks to identify a particular request
+   */
   id: string | number
   models: Model[]
   configuration: input.ModelInput
+  /**
+   * URL (e.g. of the web interface) which will be notified as the simulation status changes
+   */
+
   callbackURL: string | null
 }
 

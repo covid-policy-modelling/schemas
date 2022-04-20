@@ -12,37 +12,37 @@
 
 |   |Type|Description|Required|
 |---|---|---|---|
-|**dt**|`number`|an optional time interval at which to compute the states.|No|
-|**p**|`number` `[]`|a vector of model parameters| &#10003; Yes|
-|**tspan**|`number` `[]`|a timespan over which to simulate the model| &#10003; Yes|
-|**u0**|`number` `[]`|a vector of initial conditions| &#10003; Yes|
+|**dt**|`number`|Optional time interval at which to compute the states.|No|
+|**p**|`number` `[]`|Vector of model parameters| &#10003; Yes|
+|**tspan**|`number` `[]`|Timespan over which to simulate the model| &#10003; Yes|
+|**u0**|`number` `[]`|Vector of initial conditions| &#10003; Yes|
 
 Additional properties are not allowed.
 
 ### MinimalModelInput.dt
 
-an optional time interval at which to compute the states.
+Optional time interval at which to compute the states.
 
 * **Type**: `number`
 * **Required**: No
 
 ### MinimalModelInput.p
 
-a vector of model parameters
+Vector of model parameters
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
 ### MinimalModelInput.tspan
 
-a timespan over which to simulate the model
+Timespan over which to simulate the model
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
 ### MinimalModelInput.u0
 
-a vector of initial conditions
+Vector of initial conditions
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
@@ -60,9 +60,9 @@ a vector of initial conditions
 |---|---|---|---|
 |**metadata**|`MinimalModelInput`|| &#10003; Yes|
 |**model**|`ModelDescription`|| &#10003; Yes|
-|**outputs**|`number` `[]`|an optional vector of outputs|No|
-|**t**|`number` `[]`|a vector of times at which the model is run| &#10003; Yes|
-|**u**|`array` `[]`|a matrix of states| &#10003; Yes|
+|**outputs**|`number` `[]`|Optional vector of outputs|No|
+|**t**|`number` `[]`|Vector of times at which the model is run| &#10003; Yes|
+|**u**|`array` `[]`|Matrix of states| &#10003; Yes|
 
 Additional properties are not allowed.
 
@@ -78,21 +78,21 @@ Additional properties are not allowed.
 
 ### MinimalModelOutput.outputs
 
-an optional vector of outputs
+Optional vector of outputs
 
 * **Type**: `number` `[]`
 * **Required**: No
 
 ### MinimalModelOutput.t
 
-a vector of times at which the model is run
+Vector of times at which the model is run
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
 ### MinimalModelOutput.u
 
-a matrix of states
+Matrix of states
 
 * **Type**: `array` `[]`
 * **Required**:  &#10003; Yes

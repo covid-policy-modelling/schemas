@@ -56,14 +56,18 @@ Additional properties are not allowed.
 <a name="reference-interventionperiod"></a>
 ## Intervention Period
 
+Each intervention period is specified by a `startDate`, a set of interventions (`socialDistancing`, `caseIsolation`, `voluntaryHomeQuarantine`, and `schoolClosure`), and an estimate of the overall effect of these interventions (`reductionPopulationContact`).
+This overall estimate is needed because some models do not simulate the effects of individual interventions.
+The strictness of each intervention is specified roughly, as one of `mild`, `moderate`, or `aggressive`.
+Each model connector is responsible for interpreting this distinction in a way that works for the particular model.
+
 **`Intervention Period` Properties**
 
 |   |Type|Description|Required|
 |---|---|---|---|
 |**caseIsolation**|`Intensity`||No|
-|**reductionPopulationContact**|`number`|The estimated reduction in population contact resulting from
-all of the above interventions. Some models require this generalized
-parameter instead of the individual interventions.| &#10003; Yes|
+|**reductionPopulationContact**|`number`|The estimated reduction in population contact resulting from all of the above interventions.
+Some models require this generalized parameter instead of the individual interventions.| &#10003; Yes|
 |**schoolClosure**|`Intensity`||No|
 |**socialDistancing**|`Intensity`||No|
 |**startDate**|`ISODate`|| &#10003; Yes|
@@ -82,9 +86,8 @@ Additional properties are not allowed.
 
 ### InterventionPeriod.reductionPopulationContact
 
-The estimated reduction in population contact resulting from
-all of the above interventions. Some models require this generalized
-parameter instead of the individual interventions.
+The estimated reduction in population contact resulting from all of the above interventions.
+Some models require this generalized parameter instead of the individual interventions.
 
 * **Type**: `number`
 * **Required**:  &#10003; Yes
@@ -143,9 +146,12 @@ parameter instead of the individual interventions.
 |**calibrationCaseCount**|`number`|The total number of confirmed cases in the region before the calibration date.| &#10003; Yes|
 |**calibrationDate**|`ISODate`|| &#10003; Yes|
 |**calibrationDeathCount**|`number`|The total number of deaths in the region before the calibration date.| &#10003; Yes|
-|**interventionPeriods**|`InterventionPeriod` `[]`|A list of time periods, each with a different set of interventions.| &#10003; Yes|
-|**r0**|`["number", "null"]`|The assumed reproduction number for the virus. If this is null, then each
-model will use its own default value.| &#10003; Yes|
+|**interventionPeriods**|`InterventionPeriod` `[]`|A list of time periods, each with a different set of interventions.
+Policy interventions are specified as a series of _intervention periods_, each with a certain set of interventions that are in place.
+For example, case isolation and social distancing may be instituted first, followed by school closure a week later, followed by a relaxation of all guidelines after several months.
+**Note** - In order to specify that _all_ interventions end on a certain date, there should be a _final_ intervention period that starts on that date, has no interventions specified, and has `reductionPopulationContact` set to zero.| &#10003; Yes|
+|**r0**|`["number", "null"]`|The assumed [_reproduction number_](https://en.wikipedia.org/wiki/Basic_reproduction_number) for the virus.
+If this is null, then each model will use its own default value.| &#10003; Yes|
 
 Additional properties are not allowed.
 
@@ -173,14 +179,17 @@ The total number of deaths in the region before the calibration date.
 ### ModelParameters.interventionPeriods
 
 A list of time periods, each with a different set of interventions.
+Policy interventions are specified as a series of _intervention periods_, each with a certain set of interventions that are in place.
+For example, case isolation and social distancing may be instituted first, followed by school closure a week later, followed by a relaxation of all guidelines after several months.
+**Note** - In order to specify that _all_ interventions end on a certain date, there should be a _final_ intervention period that starts on that date, has no interventions specified, and has `reductionPopulationContact` set to zero.
 
 * **Type**: `InterventionPeriod` `[]`
 * **Required**:  &#10003; Yes
 
 ### ModelParameters.r0
 
-The assumed reproduction number for the virus. If this is null, then each
-model will use its own default value.
+The assumed [_reproduction number_](https://en.wikipedia.org/wiki/Basic_reproduction_number) for the virus.
+If this is null, then each model will use its own default value.
 
 * **Type**: `["number", "null"]`
 * **Required**:  &#10003; Yes

@@ -25,19 +25,19 @@ export interface CommonModelInput {
  */
 export interface MinimalModelInput {
   /**
-   * a vector of model parameters
+   * Vector of model parameters
    */
   p: number[]
   /**
-   * a vector of initial conditions
+   * Vector of initial conditions
    */
   u0: number[]
   /**
-   * a timespan over which to simulate the model
+   * Timespan over which to simulate the model
    */
   tspan: number[]
   /**
-   * an optional time interval at which to compute the states.
+   * Optional time interval at which to compute the states.
    */
   dt?: number
 }
@@ -53,6 +53,8 @@ export type ModelInput = CommonModelInput | MinimalModelInput
 export interface ModelParameters {
   /**
    * An ISO-8601 string encoding the date of the most recent case data in the region.
+   * Some models such as `CovidSim` require you to provide some information about recorded cases in the region, in order to calibrate the model.
+   * The web-interface provides this information automatically, based on recorded case data downloaded daily from various international data sources.
    */
   calibrationDate: ISODate
 
@@ -67,18 +69,25 @@ export interface ModelParameters {
   calibrationDeathCount: number
 
   /**
-   * The assumed reproduction number for the virus. If this is null, then each
-   * model will use its own default value.
+   * The assumed [_reproduction number_](https://en.wikipedia.org/wiki/Basic_reproduction_number) for the virus.
+   * If this is null, then each model will use its own default value.
    */
   r0: number | null
 
   /**
    * A list of time periods, each with a different set of interventions.
+   * Policy interventions are specified as a series of _intervention periods_, each with a certain set of interventions that are in place.
+   * For example, case isolation and social distancing may be instituted first, followed by school closure a week later, followed by a relaxation of all guidelines after several months.
+   * **Note** - In order to specify that _all_ interventions end on a certain date, there should be a _final_ intervention period that starts on that date, has no interventions specified, and has `reductionPopulationContact` set to zero.
    */
   interventionPeriods: InterventionPeriod[]
 }
 
 /**
+ * Each intervention period is specified by a `startDate`, a set of interventions (`socialDistancing`, `caseIsolation`, `voluntaryHomeQuarantine`, and `schoolClosure`), and an estimate of the overall effect of these interventions (`reductionPopulationContact`).
+ * This overall estimate is needed because some models do not simulate the effects of individual interventions.
+ * The strictness of each intervention is specified roughly, as one of `mild`, `moderate`, or `aggressive`.
+ * Each model connector is responsible for interpreting this distinction in a way that works for the particular model.
  * @title Intervention Period
  */
 export interface InterventionPeriod {
@@ -103,15 +112,13 @@ export interface InterventionPeriod {
   caseIsolation?: Intensity
 
   /**
-   * The level to which entire households self-isolate when one member
-   * of the household has symptoms.
+   * The level to which entire households self-isolate when one member of the household has symptoms.
    */
   voluntaryHomeQuarantine?: Intensity
 
   /**
-   * The estimated reduction in population contact resulting from
-   * all of the above interventions. Some models require this generalized
-   * parameter instead of the individual interventions.
+   * The estimated reduction in population contact resulting from all of the above interventions.
+   * Some models require this generalized parameter instead of the individual interventions.
    */
   reductionPopulationContact: number
 }

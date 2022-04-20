@@ -1,46 +1,30 @@
-# `api` Package
+# COVID-UI Schemas
 
-The api shared between the model-runner, the web front end, and the model connectors.
+The schemas documenting communication shared between the [model-runner](https://github.com/covid-policy-modelling/model-runner), the [web interface](https://github.com/covid-policy-modelling/web-ui), and the [model connectors](https://github.com/covid-policy-modelling/model-connector-template].
 
-## Input
+## Generating schema
 
-Model-runner takes a JSON input file whose structure is described by the `RequestInput` type in [`src/index.ts`](src/index.ts) (or alternatively, the `RequestInput` JSON schema in [`schema/input.json`](schema/input.json)). See those files for comments about the each field. This section gives a high-level overview of the inputs.
+Only the Typescript types in `src/` (or example files in `docs/*-annotated.json` should be updated manually.
+After making a change, run `npm run generate-schema` to update the JSON schema files and documentation automatically.
 
-The `RequestInput` object contains `callbackURL` and `id` fields which allow it to notify the website when simulation runs start and end. The remainder of the input data is contained within the nested `configuration` object.
+## Adding / documenting schemas
 
-### Calibration
+The initial purpose of this repository was to define common input and output schemas which could be used by connectors for a variety of different models, allowing simulations to be defined using the web-ui and executed with multiple models.
+Over time, this has extended to also allow model developers to use the API of the web-ui to submit simulations for an individual model, using model-specific parameters.
+These parameters still need to be defined in this repository.
 
-Some models such as `CovidSim` require you to provide some information about recorded cases in the region, in order to calibrate the model. Model-runner takes this information in the form of three fields: `calibrationDate`, `calibrationCaseCount`, and `calibrationDeathCount`. The [web-ui](https://github.com/covid-policy-modelling/web-ui) provides this information automatically, based on recorded case data downloaded daily from various international data sources.
+To add a new schema, you can use the existing schemas as examples, but at a minimum you must:
 
-### Reproduction Number (R0)
+* Add a new type defining the input schema to `model-input.ts`
+* Add the new type to the `ModelInput` type union in `model-input.ts`
+* Add a new type defining the output schema to `model-output.ts`
+* Add the new type to the `ModelOutput` type union in `model-input.ts`
+* Update `script/generate-schema` to generate JSON schema files from the types
+* Update `script/generate-schema` to generate markdown documentation from the schema (using `wetzel`)
 
-The virus's [_reproduction number_](https://en.wikipedia.org/wiki/Basic_reproduction_number) (R0) can be specified explicitly or left unspecified. If it is left unspecified, each model will use its own default value of R0.
+You should add documentation for the new schemas into the Typescript comments as much as possible, as these comments are automatically extracted into the documentation, and into the API documentation of the web-ui.
+If necessary, you can also add annotated example files into `docs`, but you should then update `script/generate-schema` to ensure that these examples are valid using `ajv` (once the annotations are removed, using `strip-json-comments`).
 
-### Interventions
-
-Policy interventions are specified as a series of _intervention periods_, each with a certain set of interventions that are in place. For example, case isolation and social distancing may be instituted first, followed by school closure a week later, followed by a relaxation of all guidelines after several months.
-
-Each of these intervention periods is specified by a `startDate`, a set of interventions (`socialDistancing`, `caseIsolation`, `voluntaryHomeQuarantine`, and `schoolClosure`), and an estimate of the overall effect of these interventions (`reductionPopulationContact`). This overall estimate is needed because some models do not simulate the effects of individual interventions.
-
-The strictness of each intervention is specified roughly, as one of `mild`, `moderate`, or `aggressive`. Each model connector is responsible for interpreting this distinction in a way that works for the particular model.
-
-**Note** - In order to specify that _all_ interventions end on a certain date, there should be a _final_ intervention period that starts on that date, has no interventions specified, and has `reductionPopulationContact` set to zero.
-
-## Output
-
-When a simulation completes, Model-runner creates a JSON file whose structure is described by the `ModelOutput` type in [`src/model-output.ts`](src/model-output.ts) (or the `ModelOutput` JSON schema in [`schema/output.json`](schema/output.json)).
-
-### Timestamps
-
-Models may differ in how long of a time period they simulate, and how fine-grained their metrics are. The output JSON contains fields that indicate the times that each predicted metric corresponds to. The `t0` field indicates the start date for the simulation, and the `timestamps` field indicates the dates that each metrics timeseries refers to. Each value in `timestamps` is a number of days since `t0`.
-
-### Metrics
-
-The output contains a number of time series which represent predicted metrics about the epidemic. Three kinds of metrics are reported:
-
-- **Current values** - These metrics (e.g. `Mild`, `Critical`) represent the current number of patients in a given condition, on a particular date. For example, the `Critical` value at a given timestamp represents the number of patients in critical condition on that day.
-- **Cumulative values** - These metrics (e.g. `cumMild`, `cumCritical`) represent the total number of people who have been afflicted with a given condition since the beginning of the epidemic. For example, the `cumCritical` value at a given timestamp represents the total number of people who had been in critical condition due to the virus any time leading up to that day.
-- **Incidence values** - The `incDeath` metric represents the number of patients who died of the virus on a given day.
 
 ## Publishing
 
