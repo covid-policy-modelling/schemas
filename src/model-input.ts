@@ -24,9 +24,21 @@ export interface CommonModelInput {
  * @title Minimal Model Input
  */
 export interface MinimalModelInput {
+  /**
+   * a vector of model parameters
+   */
   p: number[]
+  /**
+   * a vector of initial conditions
+   */
   u0: number[]
+  /**
+   * a timespan over which to simulate the model
+   */
   tspan: number[]
+  /**
+   * an optional time interval at which to compute the states.
+   */
   dt?: number
 }
 

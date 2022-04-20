@@ -12,29 +12,37 @@
 
 |   |Type|Description|Required|
 |---|---|---|---|
-|**dt**|`number`||No|
-|**p**|`number` `[]`|| &#10003; Yes|
-|**tspan**|`number` `[]`|| &#10003; Yes|
-|**u0**|`number` `[]`|| &#10003; Yes|
+|**dt**|`number`|an optional time interval at which to compute the states.|No|
+|**p**|`number` `[]`|a vector of model parameters| &#10003; Yes|
+|**tspan**|`number` `[]`|a timespan over which to simulate the model| &#10003; Yes|
+|**u0**|`number` `[]`|a vector of initial conditions| &#10003; Yes|
 
 Additional properties are not allowed.
 
 ### MinimalModelInput.dt
+
+an optional time interval at which to compute the states.
 
 * **Type**: `number`
 * **Required**: No
 
 ### MinimalModelInput.p
 
+a vector of model parameters
+
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
 ### MinimalModelInput.tspan
 
+a timespan over which to simulate the model
+
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
 ### MinimalModelInput.u0
+
+a vector of initial conditions
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
@@ -52,9 +60,9 @@ Additional properties are not allowed.
 |---|---|---|---|
 |**metadata**|`MinimalModelInput`|| &#10003; Yes|
 |**model**|`ModelDescription`|| &#10003; Yes|
-|**outputs**|`number` `[]`||No|
-|**t**|`number` `[]`|| &#10003; Yes|
-|**u**|`array` `[]`|| &#10003; Yes|
+|**outputs**|`number` `[]`|an optional vector of outputs|No|
+|**t**|`number` `[]`|a vector of times at which the model is run| &#10003; Yes|
+|**u**|`array` `[]`|a matrix of states| &#10003; Yes|
 
 Additional properties are not allowed.
 
@@ -70,15 +78,21 @@ Additional properties are not allowed.
 
 ### MinimalModelOutput.outputs
 
+an optional vector of outputs
+
 * **Type**: `number` `[]`
 * **Required**: No
 
 ### MinimalModelOutput.t
 
+a vector of times at which the model is run
+
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
 ### MinimalModelOutput.u
+
+a matrix of states
 
 * **Type**: `array` `[]`
 * **Required**:  &#10003; Yes

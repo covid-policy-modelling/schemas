@@ -55,8 +55,17 @@ export interface CommonModelOutput {
 export interface MinimalModelOutput {
   metadata: MinimalModelInput
   model: ModelDescription
+  /**
+   * a vector of times at which the model is run
+   */
   t: number[]
+  /**
+   * a matrix of states
+   */
   u: number[][]
+  /**
+   * an optional vector of outputs
+   */
   outputs?: number[]
 }
 

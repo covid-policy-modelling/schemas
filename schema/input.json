@@ -81,21 +81,25 @@
       "additionalProperties": false,
       "properties": {
         "dt": {
+          "description": "an optional time interval at which to compute the states.",
           "type": "number"
         },
         "p": {
+          "description": "a vector of model parameters",
           "items": {
             "type": "number"
           },
           "type": "array"
         },
         "tspan": {
+          "description": "a timespan over which to simulate the model",
           "items": {
             "type": "number"
           },
           "type": "array"
         },
         "u0": {
+          "description": "a vector of initial conditions",
           "items": {
             "type": "number"
           },
