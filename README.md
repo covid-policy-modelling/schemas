@@ -4,7 +4,7 @@ The schemas documenting communication shared between the [model-runner](https://
 
 ## Generating schema
 
-Only the Typescript types in `src/` (or example files in `docs/*-annotated.json` should be updated manually.
+Only the Typescript types in `src/` (or example files in `docs/*-annotated.json`) should be updated manually.
 After making a change, run `npm run generate-schema` to update the JSON schema files and documentation automatically.
 
 ## Adding / documenting schemas
