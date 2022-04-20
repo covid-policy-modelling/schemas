@@ -18,7 +18,7 @@ To add a new schema, you can use the existing schemas as examples, but at a mini
 * Add a new type defining the input schema to `model-input.ts`
 * Add the new type to the `ModelInput` type union in `model-input.ts`
 * Add a new type defining the output schema to `model-output.ts`
-* Add the new type to the `ModelOutput` type union in `model-input.ts`
+* Add the new type to the `ModelOutput` type union in `model-output.ts`
 * Update `script/generate-schema` to generate JSON schema files from the types
 * Update `script/generate-schema` to generate markdown documentation from the schema (using `wetzel`)
 
