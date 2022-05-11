@@ -6,28 +6,28 @@ echo Generating runner schema
 ts-json-schema-generator --path src/index.ts --type RequestInput --out schema/runner.json
 
 echo Generating input schema
-ts-json-schema-generator --path src/index.ts --type ModelInput --out schema/input.json
+ts-json-schema-generator --path src/input.ts --type ModelInput --out schema/input.json
 
 echo Generating output schema
-ts-json-schema-generator --path src/index.ts --type ModelOutput --out schema/output.json
+ts-json-schema-generator --path src/output.ts --type ModelOutput --out schema/output.json
 
 echo Generating common input schema
-ts-json-schema-generator --path src/index.ts --type CommonModelInput --out schema/input-common.json
+ts-json-schema-generator --path src/input-common.ts --type CommonModelInput --out schema/input-common.json
 wetzel schema/input-common.json -w > docs/input-common.md
 strip-json-comments --no-whitespace docs/input-common-annotated.json > docs/input-common-example.json
 ajv validate -s schema/input-common.json -d docs/input-common-example.json
 
 echo Generating common output schema
-ts-json-schema-generator --path src/index.ts --type CommonModelOutput --out schema/output-common.json
+ts-json-schema-generator --path src/output-common.ts --type CommonModelOutput --out schema/output-common.json
 wetzel schema/output-common.json -w > docs/output-common.md
 strip-json-comments --no-whitespace docs/output-common-annotated.json > docs/output-common-example.json
 ajv validate -s schema/output-common.json -d docs/output-common-example.json
 
 echo Generating minimal input schema
-ts-json-schema-generator --path src/index.ts --type MinimalModelInput --out schema/input-minimal.json
+ts-json-schema-generator --path src/input-minimal.ts --type MinimalModelInput --out schema/input-minimal.json
 wetzel schema/input-minimal.json -w > docs/input-minimal.md
 
 echo Generating minimal output schema
-ts-json-schema-generator --path src/index.ts --type MinimalModelOutput --out schema/output-minimal.json
+ts-json-schema-generator --path src/output-minimal.ts --type MinimalModelOutput --out schema/output-minimal.json
 wetzel schema/output-minimal.json -w > docs/output-minimal.md
 

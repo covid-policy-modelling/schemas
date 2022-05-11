@@ -1,12 +1,12 @@
 {
   "name": "@covid-policy-modelling/api",
-  "version": "0.16.0-a1",
+  "version": "0.16.0-a2",
   "main": "index",
   "types": "index.d.ts",
   "scripts": {
     "build": "npm run generate-schema && npm run compile && cp -r docs/ schema/ README.md package.json dist/src/",
     "check": "tsc --noEmit -p . && gts check",
-    "fix": "npm run generate-schema && gts fix",
+    "fix": "gts fix",
     "compile": "tsc -p .",
     "generate-schema": "script/generate-schema"
   },

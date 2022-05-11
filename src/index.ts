@@ -1,7 +1,4 @@
-import * as input from './model-input'
-import * as output from './model-output'
-
-export { input, output }
+import { ModelInput } from './input'
 
 /**
  * @title Request Input
@@ -12,7 +9,7 @@ export interface RequestInput {
    */
   id: string | number
   models: Model[]
-  configuration: input.ModelInput
+  configuration: ModelInput
   /**
    * URL (e.g. of the web interface) which will be notified as the simulation status changes
    */

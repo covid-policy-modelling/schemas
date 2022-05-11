@@ -1,23 +1,5 @@
-import { CommonModelInput, MinimalModelInput } from './model-input'
-
-/**
- * @title Model Description
- */
-export interface ModelDescription {
-  /**
-   * A short display name to identify the model
-   */
-  name: string
-  /**
-   * A version number identifying the version of the model used in this run.
-   */
-  modelVersion: string
-  /**
-   * A version number identifying the version of the connector used in this run.
-   * This may be the same as modelVersion if development of the two is closely-linked.
-   */
-  connectorVersion: string
-}
+import { CommonModelInput } from './input-common'
+import { ModelDescription } from './output'
 
 /**
  * @title Common Model Output
@@ -48,31 +30,6 @@ export interface CommonModelOutput {
     metrics: SeverityMetrics
   }
 }
-
-/**
- * @title Minimal Model Output
- */
-export interface MinimalModelOutput {
-  metadata: MinimalModelInput
-  model: ModelDescription
-  /**
-   * Vector of times at which the model is run
-   */
-  t: number[]
-  /**
-   * Matrix of states
-   */
-  u: number[][]
-  /**
-   * Optional vector of outputs
-   */
-  outputs?: number[]
-}
-
-/**
- * @title Model Output
- */
-export type ModelOutput = CommonModelOutput | MinimalModelOutput
 
 /**
  * The output contains a number of time series which represent predicted metrics about the epidemic.
