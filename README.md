@@ -1,6 +1,6 @@
 # COVID-UI Schemas
 
-The schemas documenting communication shared between the [model-runner](https://github.com/covid-policy-modelling/model-runner), the [web interface](https://github.com/covid-policy-modelling/web-ui), and the [model connectors](https://github.com/covid-policy-modelling/model-connector-template].
+The schemas documenting communication shared between the [model-runner](https://github.com/covid-policy-modelling/model-runner), the [web interface](https://github.com/covid-policy-modelling/web-ui), and the [model connectors](https://github.com/covid-policy-modelling/model-connector-template).
 
 ## Generating schema
 
@@ -15,9 +15,9 @@ These parameters still need to be defined in this repository.
 
 To add a new schema, you can use the existing schemas as examples, but at a minimum you must:
 
-* Add a new type defining the input schema to `model-input.ts`
-* Add the new type to the `ModelInput` type union in `model-input.ts`
-* Add a new type defining the output schema to `model-output.ts`
+* Add a new type defining the input schema to `input-<name>.ts`
+* Add a new type defining the output schema to `output-<name>.ts`
+* Add the new type to the `ModelInput` type union in `input.ts`
 * Add the new type to the `ModelOutput` type union in `model-output.ts`
 * Update `script/generate-schema` to generate JSON schema files from the types
 * Update `script/generate-schema` to generate markdown documentation from the schema (using `wetzel`)
