@@ -4,12 +4,10 @@
   "main": "dist/src/index",
   "types": "dist/src/index.d.ts",
   "scripts": {
-    "build": "npm run generate-schema && npm run compile",
-    "generate-schema": "./script/generate-schema",
-    "check": "gts check",
-    "compile": "tsc -p .",
-    "fix": "npm run generate-schema && gts fix",
-    "prepare": "tsc -p ."
+    "build": "npm run generate-schema",
+    "check": "tsc -p --noEmit . && gts check",
+    "fix": "gts fix",
+    "generate-schema": "./script/generate-schema"
   },
   "license": "MIT",
   "devDependencies": {

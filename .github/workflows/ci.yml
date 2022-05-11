@@ -20,7 +20,7 @@ jobs:
     - name: Check
       run: npm run check
     - name: Install
-      run: npm install
+      run: npm run build
     - name: Publish
       run: npm publish --access public
       env:
