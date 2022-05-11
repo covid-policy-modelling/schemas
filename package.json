@@ -1,13 +1,14 @@
 {
   "name": "@covid-policy-modelling/api",
-  "version": "0.15.1",
-  "main": "dist/src/index",
-  "types": "dist/src/index.d.ts",
+  "version": "0.16.0-a1",
+  "main": "index",
+  "types": "index.d.ts",
   "scripts": {
-    "build": "npm run generate-schema",
-    "check": "tsc -p --noEmit . && gts check",
-    "fix": "gts fix",
-    "generate-schema": "./script/generate-schema"
+    "build": "npm run generate-schema && npm run compile && cp -r docs/ schema/ README.md package.json dist/src/",
+    "check": "tsc --noEmit -p . && gts check",
+    "fix": "npm run generate-schema && gts fix",
+    "compile": "tsc -p .",
+    "generate-schema": "script/generate-schema"
   },
   "license": "MIT",
   "devDependencies": {
