@@ -17,6 +17,8 @@ jobs:
         node-version: '12.x'
         registry-url: 'https://registry.npmjs.org'
         scope: '@covid-policy-modelling'
+    - name: Check
+      run: npm run check
     - name: Install
       run: npm install
     - name: Publish
