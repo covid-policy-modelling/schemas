@@ -181,9 +181,6 @@
         "metadata": {
           "$ref": "#/definitions/MicroMoB_BH_RM_Input"
         },
-        "model": {
-          "$ref": "#/definitions/ModelDescription"
-        },
         "t": {
           "description": "Vector of times at which the model is run",
           "items": {
@@ -194,35 +191,10 @@
       },
       "required": [
         "metadata",
-        "model",
         "t",
         "MYZ"
       ],
       "title": "Minimal Model Output",
-      "type": "object"
-    },
-    "ModelDescription": {
-      "additionalProperties": false,
-      "properties": {
-        "connectorVersion": {
-          "description": "A version number identifying the version of the connector used in this run.\nThis may be the same as modelVersion if development of the two is closely-linked.",
-          "type": "string"
-        },
-        "modelVersion": {
-          "description": "A version number identifying the version of the model used in this run.",
-          "type": "string"
-        },
-        "name": {
-          "description": "A short display name to identify the model",
-          "type": "string"
-        }
-      },
-      "required": [
-        "name",
-        "modelVersion",
-        "connectorVersion"
-      ],
-      "title": "Model Description",
       "type": "object"
     }
   }

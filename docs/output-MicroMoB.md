@@ -2,7 +2,6 @@
 * [`Input for MicroMoB model with Beverton-Holt aquatic mosquito model and 
 Ross-Macdonald adult mosquito model.`](#reference-micromob_bh_rm_input)
 * [`Minimal Model Output`](#reference-micromob_bh_rm_output) (root object)
-* [`Model Description`](#reference-modeldescription)
 
 
 ---------------------------------------
@@ -179,7 +178,6 @@ Number of time steps
 |---|---|---|---|
 |**MYZ**|`array` `[]`|Array (patches, days, MYZ)| &#10003; Yes|
 |**metadata**|`MicroMoB_BH_RM_Input`|| &#10003; Yes|
-|**model**|`ModelDescription`|| &#10003; Yes|
 |**t**|`number` `[]`|Vector of times at which the model is run| &#10003; Yes|
 
 Additional properties are not allowed.
@@ -196,56 +194,11 @@ Array (patches, days, MYZ)
 * **Type**: `MicroMoB_BH_RM_Input`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Output.model
-
-* **Type**: `ModelDescription`
-* **Required**:  &#10003; Yes
-
 ### MicroMoB_BH_RM_Output.t
 
 Vector of times at which the model is run
 
 * **Type**: `number` `[]`
-* **Required**:  &#10003; Yes
-
-
-
-
----------------------------------------
-<a name="reference-modeldescription"></a>
-## Model Description
-
-**`Model Description` Properties**
-
-|   |Type|Description|Required|
-|---|---|---|---|
-|**connectorVersion**|`string`|A version number identifying the version of the connector used in this run.
-This may be the same as modelVersion if development of the two is closely-linked.| &#10003; Yes|
-|**modelVersion**|`string`|A version number identifying the version of the model used in this run.| &#10003; Yes|
-|**name**|`string`|A short display name to identify the model| &#10003; Yes|
-
-Additional properties are not allowed.
-
-### ModelDescription.connectorVersion
-
-A version number identifying the version of the connector used in this run.
-This may be the same as modelVersion if development of the two is closely-linked.
-
-* **Type**: `string`
-* **Required**:  &#10003; Yes
-
-### ModelDescription.modelVersion
-
-A version number identifying the version of the model used in this run.
-
-* **Type**: `string`
-* **Required**:  &#10003; Yes
-
-### ModelDescription.name
-
-A short display name to identify the model
-
-* **Type**: `string`
 * **Required**:  &#10003; Yes
 
 
