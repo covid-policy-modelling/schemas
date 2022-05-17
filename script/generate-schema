@@ -32,9 +32,9 @@ ts-json-schema-generator --path src/output-minimal.ts --type MinimalModelOutput 
 wetzel schema/output-minimal.json -w > docs/output-minimal.md
 
 echo Generating MicroMoB input schema
-ts-json-schema-generator --path src/input-MicroMoB.ts --type MicroMoB_BH_RM_Input --out schema/input-MicroMoB.json
+ts-json-schema-generator --path src/input-MicroMoB.ts --type MicroMoBBHRMInput --out schema/input-MicroMoB.json
 wetzel schema/input-MicroMoB.json -w > docs/input-MicroMoB.md
 
 echo Generating MicroMoB output schema
-ts-json-schema-generator --path src/output-MicroMoB.ts --type MicroMoB_BH_RM_Output --out schema/output-MicroMoB.json
+ts-json-schema-generator --path src/output-MicroMoB.ts --type MicroMoBBHRMOutput --out schema/output-MicroMoB.json
 wetzel schema/output-MicroMoB.json -w > docs/output-MicroMoB.md

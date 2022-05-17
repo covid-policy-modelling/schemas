@@ -78,7 +78,7 @@
       "title": "Intervention Period",
       "type": "object"
     },
-    "MicroMoB_BH_RM_Input": {
+    "MicroMoBBHRMInput": {
       "additionalProperties": false,
       "properties": {
         "adult_M": {
@@ -235,7 +235,7 @@
         "adult_Y",
         "adult_Z"
       ],
-      "title": "Input for MicroMoB model with Beverton-Holt aquatic mosquito model and \nRoss-Macdonald adult mosquito model.",
+      "title": "Input for MicroMoB model with Beverton-Holt aquatic mosquito model and\nRoss-Macdonald adult mosquito model.",
       "type": "object"
     },
     "MinimalModelInput": {
@@ -301,7 +301,7 @@
           "$ref": "#/definitions/MinimalModelInput"
         },
         {
-          "$ref": "#/definitions/MicroMoB_BH_RM_Input"
+          "$ref": "#/definitions/MicroMoBBHRMInput"
         }
       ],
       "title": "Model Input"

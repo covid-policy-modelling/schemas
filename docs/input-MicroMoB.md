@@ -1,14 +1,14 @@
 # Objects
-* [`Input for MicroMoB model with Beverton-Holt aquatic mosquito model and 
-Ross-Macdonald adult mosquito model.`](#reference-micromob_bh_rm_input) (root object)
+* [`Input for MicroMoB model with Beverton-Holt aquatic mosquito model and
+Ross-Macdonald adult mosquito model.`](#reference-micromobbhrminput) (root object)
 
 
 ---------------------------------------
-<a name="reference-micromob_bh_rm_input"></a>
-## Input for MicroMoB model with Beverton-Holt aquatic mosquito model and 
+<a name="reference-micromobbhrminput"></a>
+## Input for MicroMoB model with Beverton-Holt aquatic mosquito model and
 Ross-Macdonald adult mosquito model.
 
-**`Input for MicroMoB model with Beverton-Holt aquatic mosquito model and 
+**`Input for MicroMoB model with Beverton-Holt aquatic mosquito model and
 Ross-Macdonald adult mosquito model.` Properties**
 
 |   |Type|Description|Required|
@@ -39,28 +39,28 @@ patches)| &#10003; Yes|
 
 Additional properties are not allowed.
 
-### MicroMoB_BH_RM_Input.adult_M
+### MicroMoBBHRMInput.adult_M
 
 total mosquito density per patch (length should equal number of patches)
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.adult_Y
+### MicroMoBBHRMInput.adult_Y
 
 infected mosquito density per patch (length should equal number of patches)
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.adult_Z
+### MicroMoBBHRMInput.adult_Z
 
 infectious mosquito density per patch (length should equal number of patches)
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.adult_eip
+### MicroMoBBHRMInput.adult_eip
 
 the extrinsic incubation period (can be either length 1, 365, or equal to
 tmax)
@@ -68,21 +68,21 @@ tmax)
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.adult_f
+### MicroMoBBHRMInput.adult_f
 
 Blood feeding rate
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.adult_nu
+### MicroMoBBHRMInput.adult_nu
 
 number of eggs laid per oviposition
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.adult_p
+### MicroMoBBHRMInput.adult_p
 
 Adult daily survival probability
 (rows correspond to patches and columns to days)
@@ -90,28 +90,28 @@ Adult daily survival probability
 * **Type**: `array` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.adult_psi
+### MicroMoBBHRMInput.adult_psi
 
 mosquito dispersal matrix (rows must sum to 1)
 
 * **Type**: `array` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.adult_q
+### MicroMoBBHRMInput.adult_q
 
 Human blood feeding fraction
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.adult_stochastic
+### MicroMoBBHRMInput.adult_stochastic
 
 Update the adult mosquito model stochastically or deterministically?
 
 * **Type**: `boolean` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.aqua_K
+### MicroMoBBHRMInput.aqua_K
 
 Carrying capacity
 (rows correspond to patches and columns to days)
@@ -119,7 +119,7 @@ Carrying capacity
 * **Type**: `array` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.aqua_L
+### MicroMoBBHRMInput.aqua_L
 
 Initial number of immature mosquitoes (length should equal number of
 patches)
@@ -127,7 +127,7 @@ patches)
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.aqua_molt
+### MicroMoBBHRMInput.aqua_molt
 
 Proportion of immature stages which mature and emerge as adults each day
 (rows correspond to patches and columns to days)
@@ -135,14 +135,14 @@ Proportion of immature stages which mature and emerge as adults each day
 * **Type**: `array` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.aqua_stochastic
+### MicroMoBBHRMInput.aqua_stochastic
 
 Update the aquatic mosquito model stochastically or deterministically?
 
 * **Type**: `boolean` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.aqua_surv
+### MicroMoBBHRMInput.aqua_surv
 
 Aquatic daily survival probability
 (rows correspond to patches and columns to days)
@@ -150,14 +150,14 @@ Aquatic daily survival probability
 * **Type**: `array` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.p
+### MicroMoBBHRMInput.p
 
 Number of patches
 
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
-### MicroMoB_BH_RM_Input.tmax
+### MicroMoBBHRMInput.tmax
 
 Number of time steps
 

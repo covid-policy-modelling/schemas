@@ -1,8 +1,8 @@
 {
-  "$ref": "#/definitions/MicroMoB_BH_RM_Output",
+  "$ref": "#/definitions/MicroMoBBHRMOutput",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "MicroMoB_BH_RM_Input": {
+    "MicroMoBBHRMInput": {
       "additionalProperties": false,
       "properties": {
         "adult_M": {
@@ -159,10 +159,10 @@
         "adult_Y",
         "adult_Z"
       ],
-      "title": "Input for MicroMoB model with Beverton-Holt aquatic mosquito model and \nRoss-Macdonald adult mosquito model.",
+      "title": "Input for MicroMoB model with Beverton-Holt aquatic mosquito model and\nRoss-Macdonald adult mosquito model.",
       "type": "object"
     },
-    "MicroMoB_BH_RM_Output": {
+    "MicroMoBBHRMOutput": {
       "additionalProperties": false,
       "properties": {
         "MYZ": {
@@ -179,7 +179,7 @@
           "type": "array"
         },
         "metadata": {
-          "$ref": "#/definitions/MicroMoB_BH_RM_Input"
+          "$ref": "#/definitions/MicroMoBBHRMInput"
         },
         "t": {
           "description": "Vector of times at which the model is run",
