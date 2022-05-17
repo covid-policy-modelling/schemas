@@ -1,14 +1,14 @@
 /**
- * @title Input for MicroMoB model with Beverton-Holt aquatic mosquito model and 
+ * @title Input for MicroMoB model with Beverton-Holt aquatic mosquito model and
  * Ross-Macdonald adult mosquito model.
  */
-export interface MicroMoB_BH_RM_Input {
+export interface MicroMoBBHRMInput {
   /**
    * Number of patches
    */
   p: number[]
   /**
-   * Number of time steps 
+   * Number of time steps
    */
   tmax: number[]
   /**
@@ -45,7 +45,7 @@ export interface MicroMoB_BH_RM_Input {
   adult_f: number[]
   /**
    * Human blood feeding fraction
-   */ 
+   */
   adult_q: number[]
   /**
    * the extrinsic incubation period (can be either length 1, 365, or equal to
@@ -59,22 +59,22 @@ export interface MicroMoB_BH_RM_Input {
   adult_p: number[][]
   /**
    * mosquito dispersal matrix (rows must sum to 1)
-   */ 
+   */
   adult_psi: number[][]
   /**
    * number of eggs laid per oviposition
-   */ 
+   */
   adult_nu: number[]
   /**
    *  total mosquito density per patch (length should equal number of patches)
-   */ 
+   */
   adult_M: number[]
   /**
    * infected mosquito density per patch (length should equal number of patches)
-   */ 
+   */
   adult_Y: number[]
   /**
    * infectious mosquito density per patch (length should equal number of patches)
-   */ 
+   */
   adult_Z: number[]
 }

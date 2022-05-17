@@ -1,6 +1,6 @@
 import { CommonModelOutput } from './output-common'
 import { MinimalModelOutput } from './output-minimal'
-import { MicroMoB_BH_RM_Output } from './output-MicroMoB'
+import { MicroMoBBHRMOutput } from './output-MicroMoB'
 
 /**
  * @title Model Description
@@ -24,4 +24,4 @@ export interface ModelDescription {
 /**
  * @title Model Output
  */
-export type ModelOutput = CommonModelOutput | MinimalModelOutput | MicroMoB_BH_RM_Output
+export type ModelOutput = CommonModelOutput | MinimalModelOutput | MicroMoBBHRMOutput
