@@ -1,7 +1,8 @@
 import { MicroMoBBHRMInput } from './input-MicroMoB'
 
 /**
- * @title Minimal Model Output
+ * @title Output for MicroMoB model with Beverton-Holt aquatic mosquito model and
+ * Ross-Macdonald adult mosquito model.
  */
 export interface MicroMoBBHRMOutput {
   metadata: MicroMoBBHRMInput

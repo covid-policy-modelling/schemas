@@ -194,7 +194,7 @@
         "t",
         "MYZ"
       ],
-      "title": "Minimal Model Output",
+      "title": "Output for MicroMoB model with Beverton-Holt aquatic mosquito model and\nRoss-Macdonald adult mosquito model.",
       "type": "object"
     }
   }
