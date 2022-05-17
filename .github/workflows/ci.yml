@@ -14,7 +14,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         always-auth: true
-        node-version: '12.x'
+        node-version: 14
         registry-url: 'https://registry.npmjs.org'
         scope: '@covid-policy-modelling'
     - name: Install
