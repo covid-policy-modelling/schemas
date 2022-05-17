@@ -78,6 +78,166 @@
       "title": "Intervention Period",
       "type": "object"
     },
+    "MicroMoB_BH_RM_Input": {
+      "additionalProperties": false,
+      "properties": {
+        "adult_M": {
+          "description": "total mosquito density per patch (length should equal number of patches)",
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "adult_Y": {
+          "description": "infected mosquito density per patch (length should equal number of patches)",
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "adult_Z": {
+          "description": "infectious mosquito density per patch (length should equal number of patches)",
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "adult_eip": {
+          "description": "the extrinsic incubation period (can be either length 1, 365, or equal to\ntmax)",
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "adult_f": {
+          "description": "Blood feeding rate",
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "adult_nu": {
+          "description": "number of eggs laid per oviposition",
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "adult_p": {
+          "description": "Adult daily survival probability\n(rows correspond to patches and columns to days)",
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "adult_psi": {
+          "description": "mosquito dispersal matrix (rows must sum to 1)",
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "adult_q": {
+          "description": "Human blood feeding fraction",
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "adult_stochastic": {
+          "description": "Update the adult mosquito model stochastically or deterministically?",
+          "items": {
+            "type": "boolean"
+          },
+          "type": "array"
+        },
+        "aqua_K": {
+          "description": "Carrying capacity\n(rows correspond to patches and columns to days)",
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "aqua_L": {
+          "description": "Initial number of immature mosquitoes (length should equal number of\npatches)",
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "aqua_molt": {
+          "description": "Proportion of immature stages which mature and emerge as adults each day\n(rows correspond to patches and columns to days)",
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "aqua_stochastic": {
+          "description": "Update the aquatic mosquito model stochastically or deterministically?",
+          "items": {
+            "type": "boolean"
+          },
+          "type": "array"
+        },
+        "aqua_surv": {
+          "description": "Aquatic daily survival probability\n(rows correspond to patches and columns to days)",
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "p": {
+          "description": "Number of patches",
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "tmax": {
+          "description": "Number of time steps",
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "p",
+        "tmax",
+        "aqua_stochastic",
+        "aqua_molt",
+        "aqua_surv",
+        "aqua_K",
+        "aqua_L",
+        "adult_stochastic",
+        "adult_f",
+        "adult_q",
+        "adult_eip",
+        "adult_p",
+        "adult_psi",
+        "adult_nu",
+        "adult_M",
+        "adult_Y",
+        "adult_Z"
+      ],
+      "title": "Input for MicroMoB model with Beverton-Holt aquatic mosquito model and \nRoss-Macdonald adult mosquito model.",
+      "type": "object"
+    },
     "MinimalModelInput": {
       "additionalProperties": false,
       "properties": {
@@ -122,6 +282,9 @@
         },
         {
           "$ref": "#/definitions/MinimalModelInput"
+        },
+        {
+          "$ref": "#/definitions/MicroMoB_BH_RM_Input"
         }
       ],
       "title": "Model Input"
