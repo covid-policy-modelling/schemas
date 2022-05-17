@@ -5,4 +5,7 @@ import { MicroMoBBHRMInput } from './input-MicroMoB'
 /**
  * @title Model Input
  */
-export type ModelInput = CommonModelInput | MinimalModelInput | MicroMoBBHRMInput
+export type ModelInput =
+  | CommonModelInput
+  | MinimalModelInput
+  | MicroMoBBHRMInput

@@ -24,4 +24,7 @@ export interface ModelDescription {
 /**
  * @title Model Output
  */
-export type ModelOutput = CommonModelOutput | MinimalModelOutput | MicroMoBBHRMOutput
+export type ModelOutput =
+  | CommonModelOutput
+  | MinimalModelOutput
+  | MicroMoBBHRMOutput
