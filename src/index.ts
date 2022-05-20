@@ -17,6 +17,17 @@ export interface RequestInput {
   callbackURL: string | null
 }
 
+export type CompressedRequestInput = RequestInput & {
+  configuration?: ModelInput
+  /**
+   * Compressed representation of the configuration.
+   * It should be stringified, gzipped, then base64 encoded.
+   * @contentEncoding base64
+   * @contentMediaType application/gzip
+   */
+  configurationCompressed?: string
+}
+
 /**
  * @title Run Status
  */

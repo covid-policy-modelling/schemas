@@ -5,6 +5,9 @@ set -e
 echo Generating runner schema
 ts-json-schema-generator --path src/index.ts --type RequestInput --out schema/runner.json
 
+echo Generating compressed runner schema
+ts-json-schema-generator --path src/index.ts --type CompressedRequestInput --out schema/runner-compressed.json
+
 echo Generating input schema
 ts-json-schema-generator --path src/input.ts --type ModelInput --out schema/input.json
 
