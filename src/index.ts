@@ -39,11 +39,13 @@ export enum RunStatus {
   Failed = 'failed',
 }
 
+export type ModelSlug = string
+
 /**
  * @title Run Output
  */
 export interface RunOutput {
-  modelSlug: string
+  modelSlug: ModelSlug
   status: RunStatus
   resultsLocation: string
   exportLocation: string
@@ -54,6 +56,6 @@ export interface RunOutput {
  * @title Model
  */
 export interface Model {
-  slug: string
+  slug: ModelSlug
   imageURL: string
 }

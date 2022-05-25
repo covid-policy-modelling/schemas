@@ -282,7 +282,7 @@
           "type": "string"
         },
         "slug": {
-          "type": "string"
+          "$ref": "#/definitions/ModelSlug"
         }
       },
       "required": [
@@ -345,6 +345,9 @@
       ],
       "title": "Model Parameters",
       "type": "object"
+    },
+    "ModelSlug": {
+      "type": "string"
     },
     "Region": {
       "examples": [

@@ -39,9 +39,10 @@
         "configuration": {
           "$ref": "#/definitions/ModelInput"
         },
-        "configurationEncoded": {
+        "configurationCompressed": {
           "contentEncoding": "base64",
           "contentMediaType": "application/gzip",
+          "description": "Compressed representation of the configuration.\nIt should be stringified, gzipped, then base64 encoded.",
           "type": "string"
         },
         "id": {
@@ -322,7 +323,7 @@
           "type": "string"
         },
         "slug": {
-          "type": "string"
+          "$ref": "#/definitions/ModelSlug"
         }
       },
       "required": [
@@ -385,6 +386,9 @@
       ],
       "title": "Model Parameters",
       "type": "object"
+    },
+    "ModelSlug": {
+      "type": "string"
     },
     "Region": {
       "examples": [
