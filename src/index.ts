@@ -26,6 +26,10 @@ export type CompressedRequestInput = RequestInput & {
    * @contentMediaType application/gzip
    */
   configurationCompressed?: string
+  /**
+   * URL of an external location containing the configuration.
+   */
+  configurationLocation?: string
 }
 
 /**
