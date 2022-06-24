@@ -56,9 +56,6 @@ You can follow the same process to generate an example output file.
 
 ## Publishing
 
-To publish the `@covid-policy-modelling/api` package:
+GitHub Actions will build, test, and publish whenever changes are committed to this repository, including pushing tags to the NPM registry.
 
-1. Update the version of the api package in its `package.json` file.
-1. Push this to origin, make sure it passes CI and makes its way to master.
-1. Run the `script/publish-release` with the name of the new release in the form `vA.B.C`. This creates the tag and pushes it to the `origin` remote.
-
+To build and publish a numbered version of a package, run `npm version [major | minor | patch]`, then run `git push --tags`.
