@@ -319,7 +319,7 @@ For `R`, if your model does not produce this, you can simply omit the key.
 |**cumSARI**|`number` `[]`|Total number of severe acute respiratory illnesses since the beginning of the epidemic| &#10003; Yes|
 |**incDeath**|`number` `[]`|Number of deaths occurring on this day| &#10003; Yes|
 
-Additional properties are not allowed.
+Additional properties are allowed.
 
 ### SeverityMetrics.CritRecov
 

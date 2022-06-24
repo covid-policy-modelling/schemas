@@ -85,10 +85,10 @@
         }
       },
       "required": [
+        "aggregate",
         "metadata",
         "model",
-        "time",
-        "aggregate"
+        "time"
       ],
       "title": "Common Model Output",
       "type": "object"
@@ -506,7 +506,9 @@
       "type": "string"
     },
     "SeverityMetrics": {
-      "additionalProperties": false,
+      "additionalProperties": {
+        "type": "array"
+      },
       "description": "The output contains a number of time series which represent predicted metrics about the epidemic.\nThree kinds of metrics are reported:\n- **Current values** - These metrics (e.g. `Mild`, `Critical`) represent the current number of patients in a given condition, on a particular date. For example, the `Critical` value at a given timestamp represents the number of patients in critical condition on that day.\n- **Cumulative values** - These metrics (e.g. `cumMild`, `cumCritical`) represent the total number of people who have been afflicted with a given condition since the beginning of the epidemic. For example, the `cumCritical` value at a given timestamp represents the total number of people who had been in critical condition due to the virus any time leading up to that day.\n- **Incidence values** - The `incDeath` metric represents the number of patients who died of the virus on a given day.\nEach output is an array corresponding to the `extent` specified above (i.e. with the same length as `timestamps`).\nOther than for `R` all numbers must be integers.\nNot all output parameters may be appropriate for your model.\nAll keys (except `R`) in the `aggregate` object are required however.\nIf a particular metric is not supported an array of zeros can be given.\nFor `R`, if your model does not produce this, you can simply omit the key.",
       "properties": {
         "CritRecov": {

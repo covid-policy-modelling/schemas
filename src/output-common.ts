@@ -1,31 +1,11 @@
 import { CommonModelInput } from './input-common'
-import { ModelDescription } from './output'
+import { Metrics, ModelDescription, StructuredModelOutput } from './output'
 
 /**
  * @title Common Model Output
  */
-export interface CommonModelOutput {
+export interface CommonModelOutput extends StructuredModelOutput {
   metadata: CommonModelInput
-  model: ModelDescription
-  time: {
-    /**
-     * An ISO-8601 string encoding the date that each timeseries begins.
-     */
-    t0: string
-
-    /**
-     * The timestamps that correspond to every series of metrics.
-     * Each value is a number of days after `t0`.
-     */
-    timestamps: number[]
-
-    /**
-     * The minimum and maximum timestamps for the series of reported metrics.
-     * Each value is a number of days after `t0`.
-     */
-    extent: [number, number]
-  }
-
   aggregate: {
     metrics: SeverityMetrics
   }
@@ -45,7 +25,7 @@ export interface CommonModelOutput {
  * For `R`, if your model does not produce this, you can simply omit the key.
  * @title Severity Metrics
  */
-export interface SeverityMetrics {
+export interface SeverityMetrics extends Metrics {
   /**
    * Current number of mild cases on this day
    */
