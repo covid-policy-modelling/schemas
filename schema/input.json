@@ -275,13 +275,27 @@
       "title": "Minimal Model Input",
       "type": "object"
     },
+    "MinimalModelInputBatch": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/MinimalModelInput"
+        },
+        {
+          "items": {
+            "$ref": "#/definitions/MinimalModelInput"
+          },
+          "type": "array"
+        }
+      ],
+      "title": "Minimal Model Input Batch"
+    },
     "ModelInput": {
       "anyOf": [
         {
           "$ref": "#/definitions/CommonModelInput"
         },
         {
-          "$ref": "#/definitions/MinimalModelInput"
+          "$ref": "#/definitions/MinimalModelInputBatch"
         },
         {
           "$ref": "#/definitions/MicroMoBBHRMInput"

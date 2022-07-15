@@ -420,6 +420,20 @@
       "title": "Minimal Model Output",
       "type": "object"
     },
+    "MinimalModelOutputBatch": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/MinimalModelOutput"
+        },
+        {
+          "items": {
+            "$ref": "#/definitions/MinimalModelOutput"
+          },
+          "type": "array"
+        }
+      ],
+      "title": "Minimal Model Output Batch"
+    },
     "ModelDescription": {
       "additionalProperties": false,
       "properties": {
@@ -450,7 +464,7 @@
           "$ref": "#/definitions/CommonModelOutput"
         },
         {
-          "$ref": "#/definitions/MinimalModelOutput"
+          "$ref": "#/definitions/MinimalModelOutputBatch"
         },
         {
           "$ref": "#/definitions/MicroMoBBHRMOutput"
