@@ -1,5 +1,6 @@
 # Objects
-* [`Minimal Model Input`](#reference-minimalmodelinput) (root object)
+* [`Minimal Model Input`](#reference-minimalmodelinput)
+* [`Minimal Model Input Batch`](#reference-minimalmodelinputbatch) (root object)
 
 
 ---------------------------------------
@@ -45,6 +46,12 @@ Vector of initial conditions
 * **Type**: `number` `[]`
 * **Required**:  &#10003; Yes
 
+
+
+
+---------------------------------------
+<a name="reference-minimalmodelinputbatch"></a>
+## Minimal Model Input Batch
 
 
 

@@ -27,11 +27,11 @@ strip-json-comments --no-whitespace docs/output-common-annotated.json > docs/out
 ajv validate -s schema/output-common.json -d docs/output-common-example.json
 
 echo Generating minimal input schema
-ts-json-schema-generator --path src/input-minimal.ts --type MinimalModelInput --out schema/input-minimal.json
+ts-json-schema-generator --path src/input-minimal.ts --type MinimalModelInputBatch --out schema/input-minimal.json
 wetzel schema/input-minimal.json -w > docs/input-minimal.md
 
 echo Generating minimal output schema
-ts-json-schema-generator --path src/output-minimal.ts --type MinimalModelOutput --out schema/output-minimal.json
+ts-json-schema-generator --path src/output-minimal.ts --type MinimalModelOutputBatch --out schema/output-minimal.json
 wetzel schema/output-minimal.json -w > docs/output-minimal.md
 
 echo Generating MicroMoB input schema

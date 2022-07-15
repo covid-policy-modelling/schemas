@@ -2,6 +2,11 @@ import { MinimalModelInput } from './input-minimal'
 import { ModelDescription } from './output'
 
 /**
+ * @title Minimal Model Output Batch
+ */
+export type MinimalModelOutputBatch = MinimalModelOutput | MinimalModelOutput[]
+
+/**
  * @title Minimal Model Output
  */
 export interface MinimalModelOutput {

@@ -1,5 +1,5 @@
 {
-  "$ref": "#/definitions/MinimalModelOutput",
+  "$ref": "#/definitions/MinimalModelOutputBatch",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "MinimalModelInput": {
@@ -81,6 +81,20 @@
       ],
       "title": "Minimal Model Output",
       "type": "object"
+    },
+    "MinimalModelOutputBatch": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/MinimalModelOutput"
+        },
+        {
+          "items": {
+            "$ref": "#/definitions/MinimalModelOutput"
+          },
+          "type": "array"
+        }
+      ],
+      "title": "Minimal Model Output Batch"
     },
     "ModelDescription": {
       "additionalProperties": false,

@@ -1,4 +1,9 @@
 /**
+ * @title Minimal Model Input Batch
+ */
+export type MinimalModelInputBatch = MinimalModelInput | MinimalModelInput[]
+
+/**
  * @title Minimal Model Input
  */
 export interface MinimalModelInput {

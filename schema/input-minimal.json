@@ -1,5 +1,5 @@
 {
-  "$ref": "#/definitions/MinimalModelInput",
+  "$ref": "#/definitions/MinimalModelInputBatch",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "MinimalModelInput": {
@@ -38,6 +38,20 @@
       ],
       "title": "Minimal Model Input",
       "type": "object"
+    },
+    "MinimalModelInputBatch": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/MinimalModelInput"
+        },
+        {
+          "items": {
+            "$ref": "#/definitions/MinimalModelInput"
+          },
+          "type": "array"
+        }
+      ],
+      "title": "Minimal Model Input Batch"
     }
   }
 }

@@ -1,7 +1,8 @@
 # Objects
-* [`Minimal Model Input`](#reference-minimalmodelinput)
-* [`Minimal Model Output`](#reference-minimalmodeloutput) (root object)
-* [`Model Description`](#reference-modeldescription)
+* [`Minimal Model Output`](#reference-minimalmodeloutput)
+    * [`Minimal Model Input`](#reference-minimalmodelinput)
+    * [`Model Description`](#reference-modeldescription)
+* [`Minimal Model Output Batch`](#reference-minimalmodeloutputbatch) (root object)
 
 
 ---------------------------------------
@@ -97,6 +98,12 @@ Matrix of states
 * **Type**: `array` `[]`
 * **Required**:  &#10003; Yes
 
+
+
+
+---------------------------------------
+<a name="reference-minimalmodeloutputbatch"></a>
+## Minimal Model Output Batch
 
 
 
