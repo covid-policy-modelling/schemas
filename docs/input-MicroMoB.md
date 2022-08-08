@@ -1,6 +1,31 @@
 # Objects
+* [`Batch input for running MicroMoB with Beverton-Holt aquatic mosquito model and 
+Ross-Macdonald adult mosquito model over multiple sets of parameters.`](#reference-micromobbhrminputbatch) (root object)
 * [`Input for MicroMoB model with Beverton-Holt aquatic mosquito model and
-Ross-Macdonald adult mosquito model.`](#reference-micromobbhrminput) (root object)
+Ross-Macdonald adult mosquito model.`](#reference-micromobbhrminput)
+
+
+---------------------------------------
+<a name="reference-micromobbhrminputbatch"></a>
+## Batch input for running MicroMoB with Beverton-Holt aquatic mosquito model and 
+Ross-Macdonald adult mosquito model over multiple sets of parameters.
+
+**`Batch input for running MicroMoB with Beverton-Holt aquatic mosquito model and 
+Ross-Macdonald adult mosquito model over multiple sets of parameters.` Properties**
+
+|   |Type|Description|Required|
+|---|---|---|---|
+|**input**|`object`|| &#10003; Yes|
+
+Additional properties are not allowed.
+
+### MicroMoBBHRMInputBatch.input
+
+* **Type**: `object`
+* **Required**:  &#10003; Yes
+* **Allowed values**:
+
+
 
 
 ---------------------------------------

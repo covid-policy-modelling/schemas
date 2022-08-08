@@ -1,5 +1,5 @@
 {
-  "$ref": "#/definitions/MicroMoBBHRMInput",
+  "$ref": "#/definitions/MicroMoBBHRMInputBatch",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "MicroMoBBHRMInput": {
@@ -160,6 +160,29 @@
         "adult_Z"
       ],
       "title": "Input for MicroMoB model with Beverton-Holt aquatic mosquito model and\nRoss-Macdonald adult mosquito model.",
+      "type": "object"
+    },
+    "MicroMoBBHRMInputBatch": {
+      "additionalProperties": false,
+      "properties": {
+        "input": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/MicroMoBBHRMInput"
+            },
+            {
+              "items": {
+                "$ref": "#/definitions/MicroMoBBHRMInput"
+              },
+              "type": "array"
+            }
+          ]
+        }
+      },
+      "required": [
+        "input"
+      ],
+      "title": "Batch input for running MicroMoB with Beverton-Holt aquatic mosquito model and \nRoss-Macdonald adult mosquito model over multiple sets of parameters.",
       "type": "object"
     }
   }
