@@ -84,6 +84,4 @@ export interface MicroMoBBHRMInput {
  * @title Batch input for running MicroMoB with Beverton-Holt aquatic mosquito model and 
  * Ross-Macdonald adult mosquito model over multiple sets of parameters.
  */
-export interface MicroMoBBHRMInputBatch {
-  input: MicroMoBBHRMInput | MicroMoBBHRMInput[]
-}
+export type MicroMoBBHRMInputBatch = MicroMoBBHRMInput | MicroMoBBHRMInput[]

@@ -10,22 +10,6 @@ Ross-Macdonald adult mosquito model.`](#reference-micromobbhrminput)
 ## Batch input for running MicroMoB with Beverton-Holt aquatic mosquito model and 
 Ross-Macdonald adult mosquito model over multiple sets of parameters.
 
-**`Batch input for running MicroMoB with Beverton-Holt aquatic mosquito model and 
-Ross-Macdonald adult mosquito model over multiple sets of parameters.` Properties**
-
-|   |Type|Description|Required|
-|---|---|---|---|
-|**input**|`object`|| &#10003; Yes|
-
-Additional properties are not allowed.
-
-### MicroMoBBHRMInputBatch.input
-
-* **Type**: `object`
-* **Required**:  &#10003; Yes
-* **Allowed values**:
-
-
 
 
 ---------------------------------------

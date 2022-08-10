@@ -341,27 +341,18 @@
       "type": "object"
     },
     "MicroMoBBHRMOutputBatch": {
-      "additionalProperties": false,
-      "properties": {
-        "output": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/MicroMoBBHRMOutput"
-            },
-            {
-              "items": {
-                "$ref": "#/definitions/MicroMoBBHRMOutput"
-              },
-              "type": "array"
-            }
-          ]
+      "anyOf": [
+        {
+          "$ref": "#/definitions/MicroMoBBHRMOutput"
+        },
+        {
+          "items": {
+            "$ref": "#/definitions/MicroMoBBHRMOutput"
+          },
+          "type": "array"
         }
-      },
-      "required": [
-        "output"
       ],
-      "title": "Batch output from MicroMoB model with Beverton-Holt aquatic mosquito model and \nRoss-Macdonald adult mosquito model.",
-      "type": "object"
+      "title": "Batch output from MicroMoB model with Beverton-Holt aquatic mosquito model and \nRoss-Macdonald adult mosquito model."
     },
     "MinimalModelInput": {
       "additionalProperties": false,

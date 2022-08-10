@@ -239,27 +239,18 @@
       "type": "object"
     },
     "MicroMoBBHRMInputBatch": {
-      "additionalProperties": false,
-      "properties": {
-        "input": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/MicroMoBBHRMInput"
-            },
-            {
-              "items": {
-                "$ref": "#/definitions/MicroMoBBHRMInput"
-              },
-              "type": "array"
-            }
-          ]
+      "anyOf": [
+        {
+          "$ref": "#/definitions/MicroMoBBHRMInput"
+        },
+        {
+          "items": {
+            "$ref": "#/definitions/MicroMoBBHRMInput"
+          },
+          "type": "array"
         }
-      },
-      "required": [
-        "input"
       ],
-      "title": "Batch input for running MicroMoB with Beverton-Holt aquatic mosquito model and \nRoss-Macdonald adult mosquito model over multiple sets of parameters.",
-      "type": "object"
+      "title": "Batch input for running MicroMoB with Beverton-Holt aquatic mosquito model and \nRoss-Macdonald adult mosquito model over multiple sets of parameters."
     },
     "MinimalModelInput": {
       "additionalProperties": false,

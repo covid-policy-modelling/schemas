@@ -20,6 +20,4 @@ export interface MicroMoBBHRMOutput {
  * @title Batch output from MicroMoB model with Beverton-Holt aquatic mosquito model and 
  * Ross-Macdonald adult mosquito model.
  */
-export interface MicroMoBBHRMOutputBatch {
-  output: MicroMoBBHRMOutput | MicroMoBBHRMOutput[]
-}
+export type MicroMoBBHRMOutputBatch = MicroMoBBHRMOutput | MicroMoBBHRMOutput[]

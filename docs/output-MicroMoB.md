@@ -12,22 +12,6 @@ Ross-Macdonald adult mosquito model.`](#reference-micromobbhrminput)
 ## Batch output from MicroMoB model with Beverton-Holt aquatic mosquito model and 
 Ross-Macdonald adult mosquito model.
 
-**`Batch output from MicroMoB model with Beverton-Holt aquatic mosquito model and 
-Ross-Macdonald adult mosquito model.` Properties**
-
-|   |Type|Description|Required|
-|---|---|---|---|
-|**output**|`object`|| &#10003; Yes|
-
-Additional properties are not allowed.
-
-### MicroMoBBHRMOutputBatch.output
-
-* **Type**: `object`
-* **Required**:  &#10003; Yes
-* **Allowed values**:
-
-
 
 
 ---------------------------------------
