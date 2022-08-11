@@ -1,5 +1,5 @@
 {
-  "$ref": "#/definitions/MicroMoBBHRMOutput",
+  "$ref": "#/definitions/MicroMoBBHRMOutputBatch",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "MicroMoBBHRMInput": {
@@ -194,8 +194,22 @@
         "t",
         "MYZ"
       ],
-      "title": "Output for MicroMoB model with Beverton-Holt aquatic mosquito model and\nRoss-Macdonald adult mosquito model.",
+      "title": "Output from MicroMoB model with Beverton-Holt aquatic mosquito model and \nRoss-Macdonald adult mosquito model.",
       "type": "object"
+    },
+    "MicroMoBBHRMOutputBatch": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/MicroMoBBHRMOutput"
+        },
+        {
+          "items": {
+            "$ref": "#/definitions/MicroMoBBHRMOutput"
+          },
+          "type": "array"
+        }
+      ],
+      "title": "Batch output from MicroMoB model with Beverton-Holt aquatic mosquito model and \nRoss-Macdonald adult mosquito model."
     }
   }
 }

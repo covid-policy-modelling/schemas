@@ -279,6 +279,20 @@
       "title": "Input for MicroMoB model with Beverton-Holt aquatic mosquito model and\nRoss-Macdonald adult mosquito model.",
       "type": "object"
     },
+    "MicroMoBBHRMInputBatch": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/MicroMoBBHRMInput"
+        },
+        {
+          "items": {
+            "$ref": "#/definitions/MicroMoBBHRMInput"
+          },
+          "type": "array"
+        }
+      ],
+      "title": "Batch input for running MicroMoB with Beverton-Holt aquatic mosquito model and \nRoss-Macdonald adult mosquito model over multiple sets of parameters."
+    },
     "MinimalModelInput": {
       "additionalProperties": false,
       "properties": {
@@ -356,7 +370,7 @@
           "$ref": "#/definitions/MinimalModelInputBatch"
         },
         {
-          "$ref": "#/definitions/MicroMoBBHRMInput"
+          "$ref": "#/definitions/MicroMoBBHRMInputBatch"
         }
       ],
       "title": "Model Input"

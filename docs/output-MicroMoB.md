@@ -1,8 +1,17 @@
 # Objects
-* [`Input for MicroMoB model with Beverton-Holt aquatic mosquito model and
+* [`Batch output from MicroMoB model with Beverton-Holt aquatic mosquito model and 
+Ross-Macdonald adult mosquito model.`](#reference-micromobbhrmoutputbatch) (root object)
+* [`Output from MicroMoB model with Beverton-Holt aquatic mosquito model and 
+Ross-Macdonald adult mosquito model.`](#reference-micromobbhrmoutput)
+    * [`Input for MicroMoB model with Beverton-Holt aquatic mosquito model and
 Ross-Macdonald adult mosquito model.`](#reference-micromobbhrminput)
-* [`Output for MicroMoB model with Beverton-Holt aquatic mosquito model and
-Ross-Macdonald adult mosquito model.`](#reference-micromobbhrmoutput) (root object)
+
+
+---------------------------------------
+<a name="reference-micromobbhrmoutputbatch"></a>
+## Batch output from MicroMoB model with Beverton-Holt aquatic mosquito model and 
+Ross-Macdonald adult mosquito model.
+
 
 
 ---------------------------------------
@@ -171,10 +180,10 @@ Number of time steps
 
 ---------------------------------------
 <a name="reference-micromobbhrmoutput"></a>
-## Output for MicroMoB model with Beverton-Holt aquatic mosquito model and
+## Output from MicroMoB model with Beverton-Holt aquatic mosquito model and 
 Ross-Macdonald adult mosquito model.
 
-**`Output for MicroMoB model with Beverton-Holt aquatic mosquito model and
+**`Output from MicroMoB model with Beverton-Holt aquatic mosquito model and 
 Ross-Macdonald adult mosquito model.` Properties**
 
 |   |Type|Description|Required|

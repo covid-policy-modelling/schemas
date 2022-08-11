@@ -1,7 +1,7 @@
 import { MicroMoBBHRMInput } from './input-MicroMoB'
 
 /**
- * @title Output for MicroMoB model with Beverton-Holt aquatic mosquito model and
+ * @title Output from MicroMoB model with Beverton-Holt aquatic mosquito model and 
  * Ross-Macdonald adult mosquito model.
  */
 export interface MicroMoBBHRMOutput {
@@ -15,3 +15,9 @@ export interface MicroMoBBHRMOutput {
    */
   MYZ: number[][][]
 }
+
+/**
+ * @title Batch output from MicroMoB model with Beverton-Holt aquatic mosquito model and 
+ * Ross-Macdonald adult mosquito model.
+ */
+export type MicroMoBBHRMOutputBatch = MicroMoBBHRMOutput | MicroMoBBHRMOutput[]

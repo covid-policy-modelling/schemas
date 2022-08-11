@@ -1,6 +1,6 @@
 import { CommonModelInput } from './input-common'
 import { MinimalModelInputBatch } from './input-minimal'
-import { MicroMoBBHRMInput } from './input-MicroMoB'
+import { MicroMoBBHRMInputBatch } from './input-MicroMoB'
 
 /**
  * @title Model Input
@@ -8,4 +8,4 @@ import { MicroMoBBHRMInput } from './input-MicroMoB'
 export type ModelInput =
   | CommonModelInput
   | MinimalModelInputBatch
-  | MicroMoBBHRMInput
+  | MicroMoBBHRMInputBatch
